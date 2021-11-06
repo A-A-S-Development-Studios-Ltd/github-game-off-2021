@@ -11,14 +11,12 @@ public class GameEngine : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("mouse clicked");
-
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             Physics.Raycast(ray, out hit, 100.0f);
 
-            if (hit.transform.gameObject != null)
+            if (hit.transform != null && hit.transform.gameObject != null)
             {
                 switch (hit.transform.gameObject.tag)
                 {
