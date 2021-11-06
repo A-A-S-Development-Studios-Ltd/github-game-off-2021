@@ -18,13 +18,26 @@ public class GameEngine : MonoBehaviour
 
             Physics.Raycast(ray, out hit, 100.0f);
 
-            Debug.Log("hit: " + hit);
-            Debug.Log("collider: " + hit.collider);
-
             if (hit.transform.gameObject != null)
             {
+                switch (hit.transform.gameObject.tag)
+                {
+                    case "Bee":
+                        score -= 2;
+                        break;
+                    case "Ant":
+                        score += 1;
+                        break;
+                    case "Beetle":
+                        score += 5;
+                        break;
+                    default:
+                        break;
+                }
+                
+
                 GameObject.Destroy(hit.transform.gameObject);
-                score += 1;
+                
                 scoreLabel.text = "Score: " + score;
             }
         }

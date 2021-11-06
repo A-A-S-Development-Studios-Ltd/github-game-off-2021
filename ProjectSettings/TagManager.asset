@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Planet
+  - Bee
+  - Ant
+  - Beetle
   layers:
   - Default
   - TransparentFX
