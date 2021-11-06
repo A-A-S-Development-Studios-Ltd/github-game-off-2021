@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameEngine : MonoBehaviour
 {
+
+    public Text scoreLabel;
+    private int score = 0;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -19,6 +24,8 @@ public class GameEngine : MonoBehaviour
             if (hit.transform.gameObject != null)
             {
                 GameObject.Destroy(hit.transform.gameObject);
+                score += 1;
+                scoreLabel.text = "Score: " + score;
             }
         }
     }
