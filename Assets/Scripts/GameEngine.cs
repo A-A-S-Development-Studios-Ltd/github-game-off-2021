@@ -5,12 +5,17 @@ public class GameEngine : MonoBehaviour
 {
 
     public Text scoreLabel;
+    public StaminaBar staminaBar;
     private int score = 0;
+    private int touchStaminaCost = 12;
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+
+            staminaBar.UseStamina(touchStaminaCost);
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
