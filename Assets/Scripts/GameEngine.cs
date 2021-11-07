@@ -8,11 +8,18 @@ public class GameEngine : MonoBehaviour
     public StaminaBar staminaBar;
     private int score = 0;
     private int touchStaminaCost = 12;
+    
+    private bool isExhausted = false;
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+
+            if (isExhausted)
+            {
+                return;
+            }
 
             staminaBar.UseStamina(touchStaminaCost);
 
@@ -44,5 +51,15 @@ public class GameEngine : MonoBehaviour
                 scoreLabel.text = "Score: " + score;
             }
         }
+    }
+
+    public bool IsExhausted()
+    {
+        return isExhausted;
+    }
+
+    public void SetExaustion(bool value)
+    {
+        isExhausted = value;
     }
 }

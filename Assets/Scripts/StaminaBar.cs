@@ -6,9 +6,11 @@ public class StaminaBar : MonoBehaviour
 {
     private int maxStamina = 100;
     private int currentStamina;
-    private bool isExhausted = false;
+    private bool isShaking = false;
+    public float shakeDuration = 1f;
 
     public static StaminaBar instance;
+    public GameEngine gameEngine;
     private Slider slider;
 
     private IEnumerator coroutine;
@@ -31,9 +33,12 @@ public class StaminaBar : MonoBehaviour
 
     public void UseStamina(int amount)
     {
-        if (isExhausted)
+        if (gameEngine.IsExhausted())
         {
             Debug.Log("You're exhausted");
+
+            if (!isShaking) { StartCoroutine(ShakeCamera()); }
+
             return;
         }
 
@@ -48,7 +53,7 @@ public class StaminaBar : MonoBehaviour
         if (currentStamina >= maxStamina)
         {
             currentStamina = maxStamina;
-            isExhausted = true;
+            gameEngine.SetExaustion(true);
         }
     }
 
@@ -65,9 +70,28 @@ public class StaminaBar : MonoBehaviour
             currentStamina = Mathf.Max(currentStamina - 10, 0);
             if (currentStamina == 0)
             {
-                isExhausted = false;
+                gameEngine.SetExaustion(false);
             }
         }
+    }
+
+    IEnumerator ShakeCamera()
+    {
+
+        isShaking = true;
+        Transform cameraTransform = Camera.main.transform;
+        Vector3 startPosition = cameraTransform.position;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < shakeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            cameraTransform.position = startPosition + Random.insideUnitSphere;
+            yield return null;
+        }
+
+        cameraTransform.position = startPosition;
+        isShaking = false;
     }
 
 }
