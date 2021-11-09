@@ -13,11 +13,15 @@ public class AntBehaviour : MonoBehaviour
     private int idleChances = 0;
     private int walkingPace = 4;
 
+    private float zValue;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         animator.SetBool("isWalking", isWalking);
+
+        zValue = Camera.main.WorldToViewportPoint(transform.position).z;
     }
 
     private void FixedUpdate()
@@ -47,7 +51,11 @@ public class AntBehaviour : MonoBehaviour
 
                 var xRandom = Random.value;
                 var yRandom = Random.value;
-                Vector2 destination = Camera.main.ViewportToWorldPoint(new Vector3(xRandom, yRandom, 100f));
+                Vector3 destination = Camera.main.ViewportToWorldPoint(new Vector3(xRandom, yRandom, zValue));
+
+                Vector3 direction = destination - transform.position;
+
+                transform.up= direction;
 
                 transform.DOMove(destination, walkingPace).SetEase(Ease.InOutFlash).OnComplete(() => {
                     isIdle = false;
