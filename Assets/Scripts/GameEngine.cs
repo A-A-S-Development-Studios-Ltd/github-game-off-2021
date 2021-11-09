@@ -15,12 +15,6 @@ public class GameEngine : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-
-            if (isExhausted)
-            {
-                return;
-            }
-
             staminaBar.UseStamina(touchStaminaCost);
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

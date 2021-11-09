@@ -42,15 +42,9 @@ public class StaminaBar : MonoBehaviour
             return;
         }
 
-        if (maxStamina - amount < currentStamina)
-        {
-            Debug.Log("Stamina is too high");
-            return;
-        }
-
         currentStamina += amount;
 
-        if (currentStamina >= maxStamina)
+        if (currentStamina > maxStamina)
         {
             currentStamina = maxStamina;
             gameEngine.SetExaustion(true);
