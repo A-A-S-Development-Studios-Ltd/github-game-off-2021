@@ -56,11 +56,14 @@ public class AntBehaviour : MonoBehaviour
                 Vector3 direction = destination - transform.position;
                 transform.up= direction;
 
-                transform.DOMove(destination, walkingPace).SetEase(Ease.InOutFlash).OnComplete(() => {
-                    isIdle = false;
-                    isWalking = false;
-                    idleChances += 1;
-                });
+                transform.DOMove(destination, walkingPace)
+                    .SetEase(Ease.OutCubic)
+                    .OnComplete(() => {
+                        isIdle = false;
+                        isWalking = false;
+                        idleChances += 1;
+                    }
+                );
             }
         }
     }
