@@ -54,7 +54,6 @@ public class AntBehaviour : MonoBehaviour
                 Vector3 destination = Camera.main.ViewportToWorldPoint(new Vector3(xRandom, yRandom, zValue));
 
                 Vector3 direction = destination - transform.position;
-
                 transform.up= direction;
 
                 transform.DOMove(destination, walkingPace).SetEase(Ease.InOutFlash).OnComplete(() => {
