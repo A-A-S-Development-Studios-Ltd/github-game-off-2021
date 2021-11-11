@@ -24,6 +24,11 @@ public class GameEngine : MonoBehaviour
         {
             staminaBar.UseStamina(touchStaminaCost);
 
+            if (isExhausted)
+            {
+                return;
+            }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
