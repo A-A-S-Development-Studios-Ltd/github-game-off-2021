@@ -11,11 +11,11 @@ public class GameEngine : MonoBehaviour
     
     private bool isExhausted = false;
 
-    private AudioSource audio;
+    private AudioSource audioSource;
 
     private void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -53,8 +53,8 @@ public class GameEngine : MonoBehaviour
 
 
                 AudioClip clip = Resources.Load<AudioClip>("Audio/goblin-death");
-                audio.clip = clip;
-                audio.Play();
+                audioSource.clip = clip;
+                audioSource.Play();
                 GameObject.Destroy(hit.transform.gameObject);
                 
                 scoreLabel.text = "Score: " + score;
