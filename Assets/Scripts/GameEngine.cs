@@ -11,11 +11,23 @@ public class GameEngine : MonoBehaviour
     
     private bool isExhausted = false;
 
+    private AudioSource audio;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             staminaBar.UseStamina(touchStaminaCost);
+
+            if (isExhausted)
+            {
+                return;
+            }
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -38,8 +50,11 @@ public class GameEngine : MonoBehaviour
                     default:
                         break;
                 }
-                
 
+
+                AudioClip clip = Resources.Load<AudioClip>("Audio/goblin-death");
+                audio.clip = clip;
+                audio.Play();
                 GameObject.Destroy(hit.transform.gameObject);
                 
                 scoreLabel.text = "Score: " + score;
