@@ -38,14 +38,6 @@ public class LadyBug : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //currentPosition.x = Input.GetAxisRaw("Horizontal");
-        //currentPosition.y = Input.GetAxisRaw("Vertical");
-        //if (Input.GetMouseButtonDown(0) && !hasMoved)
-        //{
-        //    targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //    isMoving = true;
-        //    hasMoved = true;
-        //}
        
         if (!isMoving)
         {
@@ -58,7 +50,12 @@ public class LadyBug : MonoBehaviour
             else
             {
                 targetPosition = _gameMap.GetRandomPosition();
+              
             }
+             
+            
+
+
             moveSpeed = baseSpeed * speedMultiplier;
             //targetPosition = _gameMap.GetRandomPosition();
             isMoving = true;
@@ -68,6 +65,15 @@ public class LadyBug : MonoBehaviour
     {
         if (isMoving && rb.position != targetPosition)
         {
+            Vector3 moveDirection = (Vector3)targetPosition - rb.transform.position;
+            if (moveDirection != Vector3.zero)
+            {
+                float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+                rb.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            }
+            
+
+            //moving
             float step = moveSpeed * Time.deltaTime;
             rb.position = Vector2.MoveTowards(rb.position, targetPosition, step);
         }
