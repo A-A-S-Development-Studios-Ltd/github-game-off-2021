@@ -52,12 +52,10 @@ public class LadyBug : MonoBehaviour
                 targetPosition = _gameMap.GetRandomPosition();
               
             }
-             
-            
-
 
             moveSpeed = baseSpeed * speedMultiplier;
-            //targetPosition = _gameMap.GetRandomPosition();
+            Debug.Log(moveSpeed);
+       
             isMoving = true;
         }
     }
@@ -71,8 +69,13 @@ public class LadyBug : MonoBehaviour
                 float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
                 rb.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }
-            
 
+            if((Time.frameCount*moveSpeed) % 8 == 0)
+            {
+                Vector3 lTemp = transform.localScale;
+                lTemp.y = transform.localScale.y * -1;
+                transform.localScale = lTemp;
+            }
             //moving
             float step = moveSpeed * Time.deltaTime;
             rb.position = Vector2.MoveTowards(rb.position, targetPosition, step);
