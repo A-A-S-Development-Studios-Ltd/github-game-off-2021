@@ -11,7 +11,6 @@ public class TimerController : MonoBehaviour
 
     void Start()
     {
-        timerIsRunning = true;
         label = GetComponent<Text>();
     }
 
@@ -59,10 +58,11 @@ public class TimerController : MonoBehaviour
 
     // MARK: - Public exposure
 
-    public void initWithValue(float value)
+    public void InitWithValue(float value)
     {
         startingTimer = value;
         timeRemaining = value;
+        timerIsRunning = true;
     }
 
     public void SetTimeRemaining(float value)
@@ -73,5 +73,10 @@ public class TimerController : MonoBehaviour
     public void ToggleTimer()
     {
         timerIsRunning = !timerIsRunning;
+    }
+
+    public float GetRemainingTime()
+    {
+        return timeRemaining;
     }
 }
