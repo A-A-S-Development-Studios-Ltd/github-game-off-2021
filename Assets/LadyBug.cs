@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LadyBug : MonoBehaviour
@@ -7,27 +5,15 @@ public class LadyBug : MonoBehaviour
     public float moveSpeed = 5f;
     float baseSpeed = 2f;
     public Rigidbody2D rb;
-    public Animator squishAnimation;
     bool isMoving;
-    bool hasMoved;
-    int crossingState;
-
     private GameMapper _gameMap;
-
-   
     Vector2 targetPosition;
     Vector2 currentPosition;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        //hasMoved = false;
         rb = GetComponent<Rigidbody2D>();
         isMoving = false;
-        crossingState = 0;
-        
-        //squishAnimation = this.GetComponent<Animator>();
     }
 
     public void SetMap(GameMapper map)
@@ -52,10 +38,7 @@ public class LadyBug : MonoBehaviour
                 targetPosition = _gameMap.GetRandomPosition();
               
             }
-
             moveSpeed = baseSpeed * speedMultiplier;
-            Debug.Log(moveSpeed);
-       
             isMoving = true;
         }
     }
@@ -88,7 +71,6 @@ public class LadyBug : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        Debug.Log("t was clicked");
        // squishAnimation.SetTrigger("Active");
         Destroy(this.gameObject);
     }
