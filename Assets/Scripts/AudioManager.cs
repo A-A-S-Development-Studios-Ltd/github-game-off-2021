@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
 
     private static AudioManager instance = null;
-    private AudioSource audio;
+    private AudioSource levelAudio;
 
     private void Awake()
     {
@@ -23,8 +23,8 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        audio = GetComponent<AudioSource>();
-        audio.Play();
+        levelAudio = GetComponent<AudioSource>();
+        levelAudio.Play();
     }
 
     // Update is called once per frame
