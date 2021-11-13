@@ -34,9 +34,6 @@ public class TimerController : MonoBehaviour
     {
         timeToDisplay += 1;
 
-        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
-        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-
         if (timeToDisplay <= 6)
         {
             label.color = Color.red;
@@ -53,6 +50,9 @@ public class TimerController : MonoBehaviour
         {
             label.color = Color.yellow;
         }
+
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
         label.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
