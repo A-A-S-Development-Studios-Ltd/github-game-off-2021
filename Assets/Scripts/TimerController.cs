@@ -53,7 +53,14 @@ public class TimerController : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
-        label.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        if (minutes > 0) {
+            label.text = "Time: " + minutes + "m " + seconds + "s";
+        } else {
+            label.text = "Time: " + seconds + "s";
+        }
+
+        //label.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        
     }
 
     // MARK: - Public exposure
