@@ -47,8 +47,8 @@ public class CloudGenerator : MonoBehaviour
 
         GameObject cloud = Instantiate(clouds[Random.Range(0, clouds.Length)]);
 
-        startPos.y = Random.Range(startPos.y - 10f, startPos.y + 10f);
-        float scale = Random.Range(0.8f, 1.2f);
+        startPos.y = Random.Range(startPos.y - 5f, startPos.y + 5f);
+        float scale = Random.Range(0.8f, 1.6f);
 
         cloud.transform.localScale = new Vector2(scale, scale);
 
