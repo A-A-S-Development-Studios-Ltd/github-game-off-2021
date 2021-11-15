@@ -6,7 +6,8 @@ enum GameState
     PLAY,
     PAUSE,
     WIN,
-    LOOSE
+    LOOSE,
+    FINISHED
 }
 
 public class GameEngine : MonoBehaviour
@@ -38,14 +39,16 @@ public class GameEngine : MonoBehaviour
                 PlayLoop();
                 break;
             case GameState.LOOSE:
-                Debug.Log("you lost!!");
-                // TODO: - Display loose overlay
+                timer.ToggleTimer();
+                gameState = GameState.FINISHED;
                 break;
             case GameState.WIN:
                 // TODO: - Display win overlay
                 break;
             case GameState.PAUSE:
                 // TODO: - Display pause overlay
+                break;
+            case GameState.FINISHED:
                 break;
         }
     }
