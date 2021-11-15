@@ -12,12 +12,13 @@ public class Insect: MonoBehaviour
     private Vector2 _destination;
     private RectTransform parentCanvas;
 
-    private float minX = 0;
-    private float maxX = 1;
-    private float minY = 0;
-    private float maxY = 1;
+    private float minX = 0f;
+    private float maxX = 1f;
+    private float minY = 0f;
+    private float maxY = 1f;
 
-    
+    private float extraBounds = 1f;  
+    private float boundSize = 200f;  
 
     public virtual int walkingPace
     {
@@ -27,10 +28,11 @@ public class Insect: MonoBehaviour
     private void Start()
     {
         parentCanvas = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
-        maxX = parentCanvas.rect.width * parentCanvas.localScale.x;
-        maxY = parentCanvas.rect.height * parentCanvas.localScale.y;
-        minX = parentCanvas.localPosition.x - (maxX / 2);
-        minY = parentCanvas.localPosition.y - (maxY / 2);
+        extraBounds = boundSize * parentCanvas.localScale.x;
+        maxX = ((parentCanvas.rect.width * parentCanvas.localScale.x)/2) + extraBounds;
+        maxY = ((parentCanvas.rect.height * parentCanvas.localScale.y)/2) + extraBounds;
+        minX = parentCanvas.localPosition.x - maxX - extraBounds;
+        minY = parentCanvas.localPosition.y - maxY - extraBounds;
 
         animator = GetComponent<Animator>();
 
