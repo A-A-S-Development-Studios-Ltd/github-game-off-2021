@@ -1,0 +1,4 @@
+- Sprites:
+	- trees: <a href='https://www.freepik.com/vectors/background'>Background vector created by brgfx - www.freepik.com</a>
+	- grass: <a href='https://www.freepik.com/vectors/green'>Green vector created by pikisuperstar - www.freepik.com</a>
+	- island: <a href='https://www.freepik.com/vectors/background'>Background vector created by brgfx - www.freepik.com</a>
