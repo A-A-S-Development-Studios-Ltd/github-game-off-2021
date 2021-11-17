@@ -19,8 +19,6 @@ public class CloudGenerator : MonoBehaviour
 
     void Start()
     {
-        startPos = transform.position;
-
         StartCoroutine(SpawnCloud());
     }
 
@@ -36,6 +34,8 @@ public class CloudGenerator : MonoBehaviour
     IEnumerator SpawnCloud()
     {
         _readyToSpawn = false;
+
+        startPos = transform.position;
 
         float randomInterval = Random.Range(spawnInterval - 2f, spawnInterval + 2f);
         float elapsedTime = 0f;
@@ -54,6 +54,7 @@ public class CloudGenerator : MonoBehaviour
 
         cloud.transform.position = startPos;
         cloud.GetComponent<CloudController>().InitWithValues(Random.Range(1.5f, 3.5f), endPoint.transform.position.x);
+        cloud.transform.parent = transform;
 
         _readyToSpawn = true;
     }
