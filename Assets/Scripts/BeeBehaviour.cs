@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class BeeBehaviour : Insect
+public class BeeBehaviour : Bug
 {
-    public override int walkingPace
+    public override float baseSpeed
     {
-        get { return 6; }
+        get { return 6f; }
     }
 }

@@ -1,79 +1,87 @@
 ﻿using UnityEngine;
-using DG.Tweening;
-
-public class Bug: MonoBehaviour
+public class Bug : MonoBehaviour
 {
-    private BugState state = BugState.NONE;
     private Animator animator;
-    private int timeSinceRest = 0;
-
-    public virtual int walkingPace
+    public Rigidbody2D rb;
+    private GameMapper gameMap;
+    bool isMoving;
+    public float moveSpeed = 5f;
+    Vector2 targetPosition;
+    Vector2 currentPosition;
+    public virtual float baseSpeed
     {
-        get { return 4; }
+        get { return 2f; }
     }
-
-    private float zValue;
-
     private void Start()
     {
         animator = GetComponent<Animator>();
-        zValue = Camera.main.WorldToViewportPoint(transform.position).z;
+        rb = GetComponent<Rigidbody2D>();
+        isMoving = false;
+    }
+    public void SetMap(GameMapper map)
+    {
+        this.gameMap = map;
     }
 
-    private void FixedUpdate()
+    void Update()
     {
-        if (state == BugState.NONE)
+        if (!isMoving && this.gameMap != null)
         {
-
-            if (Random.value * 100 <= timeSinceRest)
+            var speedMultiplier = Random.Range(2, 6);
+            if (speedMultiplier == 3)
             {
-                Rest();
-            } else
-            {
-                Move();
+                targetPosition = gameMap.GetSpawnPosition();
             }
+            else
+            {
+                targetPosition = gameMap.GetRandomPosition();
+            }
+            moveSpeed = baseSpeed * speedMultiplier;
+            isMoving = true;
         }
     }
-
-    private void Rest()
+    private void FixedUpdate()
     {
-        state = BugState.IDLE;
-        animator.SetBool("isMoving", false);
+        if (this.GetType().ToString() != "LadyBug")
+        {
+            Debug.Log("Target x: " + targetPosition.x + ", y: " + targetPosition.y);
+            Debug.Log("RB x: " + rb.position.x + ", y: " + rb.position.y);
+        }
+        //if (isMoving &&  rb.position != targetPosition)
+        if (isMoving && Vector2.Distance(rb.position, targetPosition) > 0.3f)
+        {
 
-        Vector2 position = Camera.main.ViewportToWorldPoint(new Vector3(transform.position.x, transform.position.y, zValue));
+            Vector3 moveDirection = (Vector3)targetPosition - rb.transform.position;
+            if (moveDirection != Vector3.zero)
+            {
+                float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+                rb.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            }
+            if (this.GetType().ToString() == "LadyBug")
+            {
+                if ((Time.frameCount * moveSpeed) % 8 == 0)
+                {
+                    Vector3 lTemp = transform.localScale;
+                    lTemp.y = transform.localScale.y * -1;
+                    transform.localScale = lTemp;
+                }
+            }
 
-        transform
-            .DOMove(position, walkingPace)
-            .OnComplete(() => {
-                state = BugState.NONE;
-                timeSinceRest = 0;
-            });
+            //moving
+            float step = moveSpeed * Time.deltaTime;
+            rb.position = Vector2.MoveTowards(rb.position, targetPosition, step);
+        }
+        else
+        {
+            isMoving = false;
+        }
+        rb.MovePosition(rb.position + currentPosition * moveSpeed * Time.fixedDeltaTime);
     }
 
-    private void Move()
+    private void OnMouseDown()
     {
-        state = BugState.MOVING;
-        animator.SetBool("isMoving", true);
-
-        var xRandom = Random.value;
-        var yRandom = Random.value;
-        Vector3 destination = Camera.main.ViewportToWorldPoint(new Vector3(xRandom, yRandom, zValue));
-        Vector3 direction = destination - transform.position;
-        transform.up = direction;
-
-        transform
-            .DOMove(destination, walkingPace)
-            .SetEase(Ease.OutCubic)
-            .OnComplete(() => {
-                state = BugState.NONE;
-                timeSinceRest += 1;
-            });
+        // squishAnimation.SetTrigger("Active");
+        // animator.SetBool("isMoving", false);
+        Destroy(this.gameObject);
     }
-}
-
-public enum BugState
-{
-    NONE,
-    IDLE,
-    MOVING
 }

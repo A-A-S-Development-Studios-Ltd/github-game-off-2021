@@ -41,8 +41,8 @@ public class GameMapper
         _bottomMax = 0 - _borderOffset;
 
         //Calculate the dimensions for game areas.
-        _sectionWidth = _maxX/_cols;
-        _sectionHeight = _maxY/_rows;
+        _sectionWidth = _maxX / _cols;
+        _sectionHeight = _maxY / _rows;
 
         gameSections = new List<GameSection>();
 
@@ -51,7 +51,7 @@ public class GameMapper
     private void GenerateGameSections()
     {
         //add left border sections
-        gameSections.Add(new GameSection(minX: _leftMin, maxX: _leftMax, minY:_bottomMin, maxY:_maxY));
+        gameSections.Add(new GameSection(minX: _leftMin, maxX: _leftMax, minY: _bottomMin, maxY: _maxY));
         //add top border section
         gameSections.Add(new GameSection(minX: _leftMin, maxX: _rightMax, minY: _topMin, maxY: _topMax));
         //add riht border section
@@ -60,24 +60,6 @@ public class GameMapper
         gameSections.Add(new GameSection(minX: _leftMin, maxX: _rightMax, minY: _bottomMin, maxY: _bottomMax));
         //add main game section
         gameSections.Add(new GameSection(minX: _minX, maxX: Screen.width, minY: _minY, maxY: Screen.height));
-        //add game sections
-        //var minX = 0f;
-        //var maxX = _sectionWidth;
-        //var minY = 0f;
-        //var maxY = _sectionHeight;
-        //for(var i =0; i< _rows; i++)
-        //{
-        //    for(var j = 0; j<_cols; j++)
-        //    {
-        //        gameSections.Add(new GameSection(minX:minX,maxX:maxX, minY:minY, maxY:maxY ));
-        //        minX += _sectionWidth;
-        //        maxX += _sectionWidth;
-        //    }
-        //    minX = 0;
-        //    maxX = _sectionWidth;
-        //    minY += _sectionHeight;
-        //    maxY += _sectionHeight;
-        //}
     }
     public Vector3 GetSpawnPosition()
     {
@@ -88,5 +70,5 @@ public class GameMapper
     {
         return gameSections[4].GetRandomPosition();
     }
-    
+
 }
