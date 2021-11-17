@@ -47,7 +47,6 @@ public class Bug : MonoBehaviour
             Debug.Log("Target x: " + targetPosition.x + ", y: " + targetPosition.y);
             Debug.Log("RB x: " + rb.position.x + ", y: " + rb.position.y);
         }
-        //if (isMoving &&  rb.position != targetPosition)
         if (isMoving && Vector2.Distance(rb.position, targetPosition) > 0.3f)
         {
 
@@ -66,7 +65,6 @@ public class Bug : MonoBehaviour
                     transform.localScale = lTemp;
                 }
             }
-
             //moving
             float step = moveSpeed * Time.deltaTime;
             rb.position = Vector2.MoveTowards(rb.position, targetPosition, step);
@@ -74,6 +72,7 @@ public class Bug : MonoBehaviour
         else
         {
             isMoving = false;
+            return;
         }
         rb.MovePosition(rb.position + currentPosition * moveSpeed * Time.fixedDeltaTime);
     }
