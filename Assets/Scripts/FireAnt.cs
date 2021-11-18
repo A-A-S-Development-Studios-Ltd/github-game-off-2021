@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Beetle : Bug
+public class FireAnt : Bug
 {
     public override float baseSpeed
     {

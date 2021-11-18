@@ -42,37 +42,14 @@ public class Bug : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (this.GetType().ToString() != "LadyBug")
-        {
-            Debug.Log("Target x: " + targetPosition.x + ", y: " + targetPosition.y);
-            Debug.Log("RB x: " + rb.position.x + ", y: " + rb.position.y);
-        }
         if (isMoving && Vector2.Distance(rb.position, targetPosition) > 0.3f)
         {
-
             Vector3 moveDirection = (Vector3)targetPosition - rb.transform.position;
             if (moveDirection != Vector3.zero)
             {
-                float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-                //Angle on everything but ladybug nees to be rotated -90degress so that they are facing forward
-                if (this.GetType().ToString() != "LadyBug")
-                {
-                    angle = angle - 90f;
-                }
-
+                float angle = (Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg) - 90f;
                 rb.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }
-            //animation for lady bug
-            if (this.GetType().ToString() == "LadyBug")
-            {
-                if ((Time.frameCount * moveSpeed) % 8 == 0)
-                {
-                    Vector3 lTemp = transform.localScale;
-                    lTemp.y = transform.localScale.y * -1;
-                    transform.localScale = lTemp;
-                }
-            }
-            //moving
             float step = moveSpeed * Time.deltaTime;
             animator.speed = step * 100;
             rb.position = Vector2.MoveTowards(rb.position, targetPosition, step);
@@ -84,11 +61,8 @@ public class Bug : MonoBehaviour
         }
         rb.MovePosition(rb.position + currentPosition * moveSpeed * Time.fixedDeltaTime);
     }
-
     private void OnMouseDown()
     {
-        // squishAnimation.SetTrigger("Active");
-        // animator.SetBool("isMoving", false);
         Destroy(this.gameObject);
     }
 }

@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Beetle : Bug
+public class StinkBug : Bug
 {
     public override float baseSpeed
     {
-        get { return 2f; }
+        get { return 3f; }
     }
 }
