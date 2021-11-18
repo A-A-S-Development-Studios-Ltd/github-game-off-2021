@@ -75,9 +75,25 @@ public class GameEngine : MonoBehaviour
 
             Physics.Raycast(ray, out hit, 100.0f);
 
+            Debug.Log("test: " + hit);
             if (hit.transform != null && hit.transform.gameObject != null)
             {
-                switch (hit.transform.gameObject.tag)
+                
+            }
+
+            Vector3 touchPosWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
+
+            RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
+
+            if (hitInformation.collider != null)
+            {
+
+                GameObject touchedObject = hitInformation.transform.gameObject;
+                Debug.Log("Touched " + touchedObject.transform.name);
+
+                switch (touchedObject.transform.tag)
                 {
                     case "Bee":
                         score -= 2;
@@ -96,7 +112,7 @@ public class GameEngine : MonoBehaviour
                 AudioClip clip = Resources.Load<AudioClip>("Audio/goblin-death");
                 audioSource.clip = clip;
                 audioSource.Play();
-                GameObject.Destroy(hit.transform.gameObject);
+                GameObject.Destroy(touchedObject.transform.gameObject);
 
                 scoreLabel.text = "Score: " + score;
             }
@@ -111,5 +127,11 @@ public class GameEngine : MonoBehaviour
     public void SetExaustion(bool value)
     {
         isExhausted = value;
+    }
+
+    public void TriggerPause()
+    {
+        gameState = Time.timeScale == 1 ? GameState.PAUSE : GameState.PLAY;
+        Time.timeScale = Time.timeScale == 1 ? 0 : 1;
     }
 }

@@ -86,9 +86,4 @@ public class TimerController : MonoBehaviour
     {
         return timeRemaining;
     }
-
-    public void TriggerPause()
-    {
-        Time.timeScale = Time.timeScale == 1 ? 0 : 1;
-    }
 }

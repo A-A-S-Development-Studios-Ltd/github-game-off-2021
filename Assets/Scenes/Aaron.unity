@@ -831,8 +831,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2105107154}
-        m_TargetAssemblyTypeName: TimerController, Assembly-CSharp
+      - m_Target: {fileID: 909144051}
+        m_TargetAssemblyTypeName: GameEngine, Assembly-CSharp
         m_MethodName: TriggerPause
         m_Mode: 1
         m_Arguments:
