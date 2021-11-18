@@ -96,13 +96,25 @@ public class GameEngine : MonoBehaviour
                 switch (touchedObject.transform.tag)
                 {
                     case "Bee":
-                        score -= 2;
+                        score -= 1;
                         break;
                     case "Ant":
-                        score += 1;
+                        score += 2;
                         break;
                     case "Beetle":
+                        score += 3;
+                        break;
+                    case "FireAnt":
+                        score += 4;
+                        break;
+                    case "GoldBug":
                         score += 5;
+                        break;
+                    case "LadyBug":
+                        score += 6;
+                        break;
+                    case "StinkBug":
+                        score += 7;
                         break;
                     default:
                         break;

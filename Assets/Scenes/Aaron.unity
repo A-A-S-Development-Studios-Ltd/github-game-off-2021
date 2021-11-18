@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 29981852}
   m_Layer: 0
   m_Name: StinkBug
-  m_TagString: Untagged
+  m_TagString: StinkBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 152128303}
   m_Layer: 0
   m_Name: LadyBug
-  m_TagString: Untagged
+  m_TagString: LadyBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1126,7 +1126,7 @@ GameObject:
   - component: {fileID: 574133393}
   m_Layer: 0
   m_Name: FireAnt
-  m_TagString: Untagged
+  m_TagString: FireAnt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1258,7 +1258,7 @@ GameObject:
   - component: {fileID: 645184029}
   m_Layer: 0
   m_Name: Ant
-  m_TagString: Untagged
+  m_TagString: Ant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1686,7 +1686,7 @@ GameObject:
   - component: {fileID: 1117614588}
   m_Layer: 0
   m_Name: GoldBug
-  m_TagString: Untagged
+  m_TagString: GoldBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1965,7 +1965,7 @@ GameObject:
   - component: {fileID: 1201558483}
   m_Layer: 0
   m_Name: Beetle
-  m_TagString: Untagged
+  m_TagString: Beetle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

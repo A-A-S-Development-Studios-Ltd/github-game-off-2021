@@ -8,6 +8,10 @@ TagManager:
   - Bee
   - Ant
   - Beetle
+  - FireAnt
+  - GoldBug
+  - LadyBug
+  - StinkBug
   layers:
   - Default
   - TransparentFX
