@@ -74,6 +74,7 @@ public class Bug : MonoBehaviour
             }
             //moving
             float step = moveSpeed * Time.deltaTime;
+            animator.speed = step * 100;
             rb.position = Vector2.MoveTowards(rb.position, targetPosition, step);
         }
         else

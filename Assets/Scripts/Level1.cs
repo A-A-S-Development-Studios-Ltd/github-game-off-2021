@@ -8,6 +8,7 @@ public class Level1 : MonoBehaviour
     public LadyBug lady;
     public Bee bee;
     public Ant ant;
+    public Beetle beetle;
     public GoldLadyBug goldLadyBug;
     public GameMapper gameMap;
     public List<Bug> bugList;
@@ -41,6 +42,13 @@ public class Level1 : MonoBehaviour
         for (int i = 0; i < ants; i++)
         {
             Ant bug = Instantiate(ant, gameMap.GetSpawnPosition(), Quaternion.identity);
+            bug.SetMap(gameMap);
+            bugList.Add(bug);
+        }
+        int beetles = Random.Range(1, 2);
+        for (int i = 0; i < beetles; i++)
+        {
+            Beetle bug = Instantiate(beetle, gameMap.GetSpawnPosition(), Quaternion.identity);
             bug.SetMap(gameMap);
             bugList.Add(bug);
         }
