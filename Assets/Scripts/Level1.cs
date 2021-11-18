@@ -7,6 +7,7 @@ public class Level1 : MonoBehaviour
 
     public LadyBug lady;
     public Bee bee;
+    public Ant ant;
     public GoldLadyBug goldLadyBug;
     public GameMapper gameMap;
     public List<Bug> bugList;
@@ -22,19 +23,27 @@ public class Level1 : MonoBehaviour
             bug.SetMap(gameMap);
             bugList.Add(bug);
         }
-        int numberOfBees = Random.Range(3, 10);
+        int numberOfBees = Random.Range(2, 5);
         for (int i = 0; i < numberOfBees; i++)
         {
             Bee bug = Instantiate(bee, gameMap.GetSpawnPosition(), Quaternion.identity);
             bug.SetMap(gameMap);
             bugList.Add(bug);
         }
-        int goldLadyBugs = Random.Range(3, 10);
+        int goldLadyBugs = Random.Range(1, 2);
         for (int i = 0; i < goldLadyBugs; i++)
         {
             GoldLadyBug bug = Instantiate(goldLadyBug, gameMap.GetSpawnPosition(), Quaternion.identity);
             bug.SetMap(gameMap);
             bugList.Add(bug);
         }
+        int ants = Random.Range(1, 2);
+        for (int i = 0; i < ants; i++)
+        {
+            Ant bug = Instantiate(ant, gameMap.GetSpawnPosition(), Quaternion.identity);
+            bug.SetMap(gameMap);
+            bugList.Add(bug);
+        }
+
     }
 }

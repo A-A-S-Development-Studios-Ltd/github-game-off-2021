@@ -238,6 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lady: {fileID: 1022261251199575023, guid: a6bddf455b1724436a9adb1264efb7b7, type: 3}
   bee: {fileID: 1817141950050022118, guid: 718b79fcefb344a2bbd86b72423f2c4b, type: 3}
+  ant: {fileID: 1972920615644938067, guid: 534fff3d4ffbc6d40a943c6bc4d8a344, type: 3}
   goldLadyBug: {fileID: -5341057719371153080, guid: 7b20484eab4da514ba9738137933c302, type: 3}
   bugList: []
 --- !u!4 &1239740781

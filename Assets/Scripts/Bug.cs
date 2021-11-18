@@ -54,8 +54,15 @@ public class Bug : MonoBehaviour
             if (moveDirection != Vector3.zero)
             {
                 float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+                //Angle on everything but ladybug nees to be rotated -90degress so that they are facing forward
+                if (this.GetType().ToString() != "LadyBug")
+                {
+                    angle = angle - 90f;
+                }
+
                 rb.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }
+            //animation for lady bug
             if (this.GetType().ToString() == "LadyBug")
             {
                 if ((Time.frameCount * moveSpeed) % 8 == 0)
