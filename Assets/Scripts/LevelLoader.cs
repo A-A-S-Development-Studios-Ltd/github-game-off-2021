@@ -10,14 +10,8 @@ public class LevelLoader : MonoBehaviour
 
     public float transitionTime = 1f;
 
-    void Update()
-    {
-
-    }
-
     public void LoadSurvival()
     {
-        Debug.Log("test");
         StartCoroutine(LoadLevel(1));
     }
 
