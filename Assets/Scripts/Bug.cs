@@ -61,8 +61,8 @@ public class Bug : MonoBehaviour
         }
         rb.MovePosition(rb.position + currentPosition * moveSpeed * Time.fixedDeltaTime);
     }
-    private void OnMouseDown()
-    {
-        Destroy(this.gameObject);
-    }
+    // private void OnMouseDown()
+    // {
+    //     //Destroy(this.gameObject);
+    // }
 }

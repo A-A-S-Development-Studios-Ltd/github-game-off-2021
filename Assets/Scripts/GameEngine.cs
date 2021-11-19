@@ -17,7 +17,7 @@ public class GameEngine : MonoBehaviour
     public StaminaBar staminaBar;
     private int score = 0;
     private int touchStaminaCost = 12;
-    
+
     private bool isExhausted = false;
 
     private AudioSource audioSource;
@@ -28,7 +28,7 @@ public class GameEngine : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        timer.InitWithValue(15);
+        timer.InitWithValue(60);
     }
 
     private void FixedUpdate()
@@ -78,7 +78,7 @@ public class GameEngine : MonoBehaviour
             Debug.Log("test: " + hit);
             if (hit.transform != null && hit.transform.gameObject != null)
             {
-                
+
             }
 
             Vector3 touchPosWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
