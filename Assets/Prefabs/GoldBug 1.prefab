@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3874222295567147232}
   m_Layer: 0
   m_Name: GoldBug 1
-  m_TagString: Untagged
+  m_TagString: GoldBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.96, y: 3.32}
+  m_Size: {x: 2.83, y: 3.96}
   m_EdgeRadius: 0.09
 --- !u!50 &5936957053153919012
 Rigidbody2D:
