@@ -6225,18 +6225,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2997661880622140413, guid: 51834a7365b7449c591e495e236e23a3, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2997661880622140413, guid: 51834a7365b7449c591e495e236e23a3, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2997661880622140413, guid: 51834a7365b7449c591e495e236e23a3, type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2997661881893076692, guid: 51834a7365b7449c591e495e236e23a3, type: 3}
       propertyPath: m_RootOrder
       value: 1
