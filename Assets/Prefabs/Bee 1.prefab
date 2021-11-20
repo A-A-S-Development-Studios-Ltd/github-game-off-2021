@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3260638025957549318}
   - component: {fileID: 3260638025957549319}
   - component: {fileID: 3260638025957549312}
+  - component: {fileID: -1211589080607740138}
   - component: {fileID: 3260638025957549313}
   - component: {fileID: 2251156265665766321}
-  - component: {fileID: -1211589080607740138}
+  - component: {fileID: 6846224437979738663}
   m_Layer: 0
   m_Name: Bee 1
   m_TagString: Bee
@@ -135,6 +136,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.49, y: 3.01}
   m_EdgeRadius: 0.18
+--- !u!50 &-1211589080607740138
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3260638025957549315}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &3260638025957549313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,24 +185,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 5
---- !u!50 &-1211589080607740138
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &6846224437979738663
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3260638025957549315}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8665448b899c69c45be9b798dce8a467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ani: {fileID: 3260638025957549319}

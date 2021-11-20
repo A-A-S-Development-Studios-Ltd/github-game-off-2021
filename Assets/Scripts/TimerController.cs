@@ -37,29 +37,16 @@ public class TimerController : MonoBehaviour
         {
             label.color = Color.red;
         }
-        else if (timeToDisplay > startingTimer * 60 / 100)
-        {
-            label.color = Color.blue;
-        }
-        else if (timeToDisplay > startingTimer * 40 / 100)
-        {
-            label.color = Color.green;
-        }
         else
         {
-            label.color = Color.yellow;
+            label.color = Color.white;
         }
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
-        if (minutes > 0) {
-            label.text = "Time: " + minutes + "m " + seconds + "s";
-        } else {
-            label.text = "Time: " + seconds + "s";
-        }
-
-        //label.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        
+        label.text = "Time: " + Mathf.FloorToInt(timeToDisplay) + "s";
         
     }
 

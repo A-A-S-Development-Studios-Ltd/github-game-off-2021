@@ -16,7 +16,8 @@ public class GameEngine : MonoBehaviour
     public Text scoreLabel;
     public StaminaBar staminaBar;
     private int score = 0;
-    private int touchStaminaCost = 12;
+    private int missStaminaCost = 12;
+    private int hitStaminaCost = 2;
 
     private bool isExhausted = false;
 
@@ -63,8 +64,6 @@ public class GameEngine : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            staminaBar.UseStamina(touchStaminaCost);
-
             if (isExhausted)
             {
                 return;
@@ -89,7 +88,7 @@ public class GameEngine : MonoBehaviour
 
             if (hitInformation.collider != null)
             {
-
+                staminaBar.UseStamina(hitStaminaCost);
                 GameObject touchedObject = hitInformation.transform.gameObject;
                 Debug.Log("Touched " + touchedObject.transform.name);
 
@@ -124,9 +123,12 @@ public class GameEngine : MonoBehaviour
                 AudioClip clip = Resources.Load<AudioClip>("Audio/goblin-death");
                 audioSource.clip = clip;
                 audioSource.Play();
-                GameObject.Destroy(touchedObject.transform.gameObject);
+                //GameObject.Destroy(touchedObject.transform.gameObject);
+                
 
                 scoreLabel.text = "Score: " + score;
+            } else {
+                staminaBar.UseStamina(missStaminaCost);
             }
         }
     }
