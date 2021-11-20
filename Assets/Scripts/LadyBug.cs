@@ -6,4 +6,8 @@ public class LadyBug : Bug
     {
         get { return 2f; }
     }
+    private void OnDestroy()
+    {
+        Debug.Log("the LADY bug was destroyed");
+    }
 }

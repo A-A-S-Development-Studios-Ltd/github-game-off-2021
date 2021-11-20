@@ -8,15 +8,19 @@ public class Bug : MonoBehaviour
     public float moveSpeed = 5f;
     Vector2 targetPosition;
     Vector2 currentPosition;
+    public bool autoDestroy;
+    int deathStep = 0;
     public virtual float baseSpeed
     {
         get { return 2f; }
     }
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         isMoving = false;
+        autoDestroy = false;
     }
     public void SetMap(GameMapper map)
     {
@@ -28,6 +32,7 @@ public class Bug : MonoBehaviour
         if (!isMoving && this.gameMap != null)
         {
             var speedMultiplier = Random.Range(2, 6);
+
             if (speedMultiplier == 3)
             {
                 targetPosition = gameMap.GetSpawnPosition();
@@ -35,6 +40,11 @@ public class Bug : MonoBehaviour
             else
             {
                 targetPosition = gameMap.GetRandomPosition();
+            }
+            if (autoDestroy)
+            {
+                deathStep++;
+                targetPosition = gameMap.GetSpawnPosition();
             }
             moveSpeed = baseSpeed * speedMultiplier;
             isMoving = true;
@@ -57,10 +67,16 @@ public class Bug : MonoBehaviour
         else
         {
             isMoving = false;
+            if (autoDestroy && deathStep > 1)
+            {
+                Destroy(this.gameObject);
+            }
+
             return;
         }
         rb.MovePosition(rb.position + currentPosition * moveSpeed * Time.fixedDeltaTime);
     }
+
     // private void OnMouseDown()
     // {
     //     //Destroy(this.gameObject);
