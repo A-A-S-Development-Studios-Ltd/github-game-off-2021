@@ -123,7 +123,7 @@ public class GameEngine : MonoBehaviour
                 AudioClip clip = Resources.Load<AudioClip>("Audio/goblin-death");
                 audioSource.clip = clip;
                 audioSource.Play();
-                //GameObject.Destroy(touchedObject.transform.gameObject);
+                GameObject.Destroy(touchedObject.transform.gameObject);
                 
 
                 scoreLabel.text = "Score: " + score;
