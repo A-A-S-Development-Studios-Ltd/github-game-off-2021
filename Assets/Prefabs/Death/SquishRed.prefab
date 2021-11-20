@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5226803261635142458}
   m_Layer: 0
   m_Name: SquishRed
-  m_TagString: Untagged
+  m_TagString: DeathRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

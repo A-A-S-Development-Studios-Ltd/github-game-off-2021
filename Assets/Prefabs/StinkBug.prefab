@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8771192226247134523}
   - component: {fileID: -4170780380538325070}
   - component: {fileID: 4897944514458233819}
-  - component: {fileID: 8030566500505364482}
   m_Layer: 0
   m_Name: StinkBug
   m_TagString: StinkBug
@@ -170,16 +169,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 5
---- !u!114 &8030566500505364482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8771192226247134524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8665448b899c69c45be9b798dce8a467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ani: {fileID: 8771192226247134522}
+  autoDestroy: 0
+  deathAnimation: {fileID: 5324196249880785302, guid: c01389032cab7844580dced392788c55, type: 3}
+  powerUp: {fileID: 6407398009316366248, guid: ba1ab899670369246b8c752e90e9edef, type: 3}

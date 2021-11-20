@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 public class Bug : MonoBehaviour
 {
     private Animator animator;
@@ -10,6 +11,7 @@ public class Bug : MonoBehaviour
     Vector2 currentPosition;
     public bool autoDestroy;
     int deathStep = 0;
+
     public virtual float baseSpeed
     {
         get { return 2f; }
@@ -50,6 +52,15 @@ public class Bug : MonoBehaviour
             isMoving = true;
         }
     }
+    public virtual void PlayDeathAnimation() {
+        Debug.Log("PlayDeath");
+    }
+    private void OnMouseDown()
+    {
+        Debug.Log("Some Gibberish");
+        this.PlayDeathAnimation();
+        Destroy(this.gameObject);
+    }
     private void FixedUpdate()
     {
         if (isMoving && Vector2.Distance(rb.position, targetPosition) > 0.3f)
@@ -79,6 +90,6 @@ public class Bug : MonoBehaviour
 
     // private void OnMouseDown()
     // {
-    //     //Destroy(this.gameObject);
+    //     this.PlayDeathAnimation();
     // }
 }

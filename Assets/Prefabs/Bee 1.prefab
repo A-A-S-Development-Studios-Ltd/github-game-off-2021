@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: -1211589080607740138}
   - component: {fileID: 3260638025957549313}
   - component: {fileID: 2251156265665766321}
-  - component: {fileID: 6846224437979738663}
   m_Layer: 0
   m_Name: Bee 1
   m_TagString: Bee
@@ -171,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 5
+  autoDestroy: 0
 --- !u!114 &2251156265665766321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,16 +185,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 5
---- !u!114 &6846224437979738663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3260638025957549315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8665448b899c69c45be9b798dce8a467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ani: {fileID: 3260638025957549319}
+  autoDestroy: 0
+  deathAnimation: {fileID: 5324196249880785302, guid: c01389032cab7844580dced392788c55, type: 3}
+  powerUp: {fileID: 2636018657226032609, guid: 9f1dcdf8d8a395d46982e6cc9dbe0ae0, type: 3}

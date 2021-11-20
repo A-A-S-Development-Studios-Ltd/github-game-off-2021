@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4131879293256607539}
   - component: {fileID: 5936957053153919012}
   - component: {fileID: -3874222295567147232}
-  - component: {fileID: 4691875955453397804}
   - component: {fileID: 5786230820235905765}
   m_Layer: 0
   m_Name: GoldBug 1
@@ -30,9 +29,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4131879293256607541}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.89, y: -1.5668979, z: -21.533562}
-  m_LocalScale: {x: 0.20000003, y: 0.20000003, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -172,19 +171,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 5
   autoDestroy: 0
---- !u!114 &4691875955453397804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4131879293256607541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8665448b899c69c45be9b798dce8a467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ani: {fileID: 4131879293256607538}
+  deathAnimation: {fileID: 5324196249880785302, guid: c01389032cab7844580dced392788c55, type: 3}
+  powerUp: {fileID: 676416568051432823, guid: b6303763e92f5db4facb8504b5c5b9e8, type: 3}
 --- !u!114 &5786230820235905765
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,17 @@ TagManager:
   - GoldBug
   - LadyBug
   - StinkBug
+  - DeathStar
+  - DeathRed
+  - DeathGreen
+  - PowerHoney
+  - PowerTimer
+  - PowerMagnify
+  - PowerSprayCan
+  - PC-Honey
+  - PC-Magnify
+  - PC-SprayCan
+  - PC-Timer
   layers:
   - Default
   - TransparentFX

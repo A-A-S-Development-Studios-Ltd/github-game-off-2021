@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4017688899887164684}
   - component: {fileID: -2474537074783852361}
   - component: {fileID: 1972920615644938067}
-  - component: {fileID: 234408310668924623}
   m_Layer: 0
   m_Name: Ant
   m_TagString: Ant
@@ -29,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4017688899887164685}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.76, y: -1.46, z: -21.53356}
   m_LocalScale: {x: 0.34999996, y: 0.34999996, z: 1}
   m_ConstrainProportionsScale: 0
@@ -170,16 +169,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 5
---- !u!114 &234408310668924623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017688899887164685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8665448b899c69c45be9b798dce8a467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ani: {fileID: 4017688899887164687}
+  autoDestroy: 0
+  deathAnimation: {fileID: 8094976621413141068, guid: 61da8b59db83047469049ce08b3eaff9, type: 3}
