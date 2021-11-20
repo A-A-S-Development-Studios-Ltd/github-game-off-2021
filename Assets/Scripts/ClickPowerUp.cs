@@ -31,7 +31,7 @@ public class ClickPowerUp : MonoBehaviour
     }
 
     void FixedUpdate() {
-        gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, targetPosition, 4 * Time.deltaTime);
+        gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, targetPosition, 6 * Time.deltaTime);
     }   
 
     private void OnMouseDown()
