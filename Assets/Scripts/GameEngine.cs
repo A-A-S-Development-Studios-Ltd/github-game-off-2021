@@ -54,14 +54,8 @@ public class GameEngine : MonoBehaviour
         }
     }
 
-    private void PlayLoop()
+    private void Update() 
     {
-        if (timer.GetRemainingTime() <= 0f)
-        {
-            gameState = GameState.LOOSE;
-            return;
-        }
-
         if (Input.GetMouseButtonDown(0))
         {
             if (isExhausted)
@@ -119,29 +113,23 @@ public class GameEngine : MonoBehaviour
                         break;
                 }
 
-
                 AudioClip clip = Resources.Load<AudioClip>("Audio/goblin-death");
                 audioSource.clip = clip;
                 audioSource.Play();
-
-                //Debug.Log("Touched bug is: " + touchedObject.transform.gameObject is Bug);
-                //Debug.Log("Touched other:" + touchedObject.GetComponent<Bug>());
-                //Debug.Log("Touched type:" + touchedObject.GetType().ToString());
-
-                //prefab that plays death animation for one of the bugs
-
-                // if(touchedObject.GetComponent<Bug>() != null) {
-                //     touchedObject.GetComponent<Bee>().PlayDeathAnimation();
-                // }
-                
-
-                //GameObject.Destroy(touchedObject.transform.gameObject);
-                
 
                 scoreLabel.text = "Score: " + score;
             } else {
                 staminaBar.UseStamina(missStaminaCost);
             }
+        }
+    }
+
+    private void PlayLoop()
+    {
+        if (timer.GetRemainingTime() <= 0f)
+        {
+            gameState = GameState.LOOSE;
+            return;
         }
     }
 

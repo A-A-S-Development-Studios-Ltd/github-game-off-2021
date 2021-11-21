@@ -13,6 +13,9 @@ public class StaminaBar : MonoBehaviour
     public GameEngine gameEngine;
     private Slider slider;
 
+    private GameObject SliderFill;
+    private Color greenFill = new Color32(113,255,32,100);
+
     private IEnumerator coroutine;
 
     private void Awake()
@@ -26,6 +29,8 @@ public class StaminaBar : MonoBehaviour
         currentStamina = 0;
         slider.maxValue = maxStamina;
         slider.value = 0;
+        SliderFill = slider.transform.GetChild(1).GetChild(0).gameObject;
+        SliderFill.GetComponent<Image>().color = greenFill;
 
         coroutine = DecreaseStamina();
         StartCoroutine(coroutine);
@@ -48,6 +53,8 @@ public class StaminaBar : MonoBehaviour
         {
             currentStamina = maxStamina;
             gameEngine.SetExaustion(true);
+            
+            SliderFill.GetComponent<Image>().color = Color.red;
         }
     }
 
@@ -60,11 +67,12 @@ public class StaminaBar : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
-            currentStamina = Mathf.Max(currentStamina - 10, 0);
-            if (currentStamina == 0)
+            yield return new WaitForSeconds(0.1f);
+            currentStamina = Mathf.Max(currentStamina - 1, 0);
+            if (currentStamina == 25)
             {
                 gameEngine.SetExaustion(false);
+                SliderFill.GetComponent<Image>().color = greenFill;
             }
         }
     }

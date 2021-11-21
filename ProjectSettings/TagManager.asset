@@ -23,6 +23,7 @@ TagManager:
   - PC-Magnify
   - PC-SprayCan
   - PC-Timer
+  - ScrollFill
   layers:
   - Default
   - TransparentFX
