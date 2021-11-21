@@ -13,13 +13,16 @@ public class Level1 : MonoBehaviour
     public StinkBug stinkBug;
     public List<Bug> bugList;
     public LevelWave currentWave;
+    public int waveCount;
     void Start()
     {
         WaveEvents.onComplete += this.OnWaveComplete;
+        waveCount = 0;
         StartNextWave();
     }
     void StartNextWave()
     {
+        waveCount++;
         currentWave = GetRamdomWave();
         currentWave.StartWave();
     }
@@ -29,15 +32,16 @@ public class Level1 : MonoBehaviour
     }
     LevelWave GetRamdomWave()
     {
+
         Debug.Log("generating random wave");
         Dictionary<Bug, int> bugs = new Dictionary<Bug, int>();
         bugs.Add(ant, 2);
-        bugs.Add(bee, 2);
-        // bugs.Add(beetle, 2);
-        // bugs.Add(goldLadyBug, 2);
-        // bugs.Add(fireAnt, 2);
+        // bugs.Add(bee, 2);
+        bugs.Add(beetle, 2);
+        bugs.Add(goldLadyBug, 2);
+        //bugs.Add(fireAnt, 2);
         // bugs.Add(ladyBug, 2);
-        // bugs.Add(stinkBug, 2);
+        bugs.Add(stinkBug, 2);
         return new LevelWave(bugs, 2);
     }
 }

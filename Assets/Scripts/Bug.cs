@@ -61,8 +61,12 @@ public class Bug : MonoBehaviour
     private void OnMouseDown()
     {
         this.PlayDeathAnimation();
-        BugEvents.BugDead(this);
+
         Destroy(this.gameObject);
+    }
+    private void OnDestroy()
+    {
+        BugEvents.BugDead(this);
     }
     private void FixedUpdate()
     {
