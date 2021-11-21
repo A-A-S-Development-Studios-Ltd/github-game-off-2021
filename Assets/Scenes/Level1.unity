@@ -330,12 +330,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6def339c9b3674ca03c29a0ef299c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lady: {fileID: -3999232061920852424, guid: ed0b3df90df84824081d612689c7bb0f, type: 3}
-  bee: {fileID: 2251156265665766321, guid: c9e3b461ecde2f74aa31d204b1c42e3f, type: 3}
   ant: {fileID: 1972920615644938067, guid: 534fff3d4ffbc6d40a943c6bc4d8a344, type: 3}
+  bee: {fileID: 2251156265665766321, guid: c9e3b461ecde2f74aa31d204b1c42e3f, type: 3}
   beetle: {fileID: 9131959674962252271, guid: 06726b6132b030e4aaf074461587ebf2, type: 3}
   goldLadyBug: {fileID: -3874222295567147232, guid: 8f3662b4acd511f48b21a7a44862c88f, type: 3}
   fireAnt: {fileID: 8276636580660643473, guid: c5f0bc753c927b44bb4765914179982d, type: 3}
+  ladyBug: {fileID: -3999232061920852424, guid: ed0b3df90df84824081d612689c7bb0f, type: 3}
   stinkBug: {fileID: 4897944514458233819, guid: 277436f1582783945a8b62849301f8a9, type: 3}
   bugList: []
 --- !u!4 &1239740781

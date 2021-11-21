@@ -4,35 +4,19 @@ using UnityEngine;
 
 public class Level1 : MonoBehaviour
 {
-
-    public LadyBug lady;
-    public Bee bee;
     public Ant ant;
+    public Bee bee;
     public Beetle beetle;
     public GoldLadyBug goldLadyBug;
     public FireAnt fireAnt;
+    public LadyBug ladyBug;
     public StinkBug stinkBug;
-
     public List<Bug> bugList;
     public LevelWave currentWave;
-
-
-    LevelWave w2;
-
     void Start()
     {
-
-        //BugGenerator.generate(count: 10, bug: lady);
-
-        Dictionary<Bug, int> level1Bugs = new Dictionary<Bug, int>();
-        level1Bugs.Add(lady, 10);
-        level1Bugs.Add(goldLadyBug, 2);
-        level1Bugs.Add(fireAnt, 1);
-        LevelWave w1 = new LevelWave(level1Bugs, 2);
-        currentWave = w1;
+        currentWave = GetRamdomWave();
         currentWave.StartWave();
-
-
     }
     private void Update()
     {
@@ -49,5 +33,17 @@ public class Level1 : MonoBehaviour
     void spawnNextWave()
     {
         Debug.Log("Shoudl spawn next wave!");
+    }
+    LevelWave GetRamdomWave()
+    {
+        Dictionary<Bug, int> bugs = new Dictionary<Bug, int>();
+        bugs.Add(ant, 2);
+        bugs.Add(bee, 2);
+        bugs.Add(beetle, 2);
+        bugs.Add(goldLadyBug, 2);
+        bugs.Add(fireAnt, 2);
+        bugs.Add(ladyBug, 2);
+        bugs.Add(stinkBug, 2);
+        return new LevelWave(bugs, 2);
     }
 }

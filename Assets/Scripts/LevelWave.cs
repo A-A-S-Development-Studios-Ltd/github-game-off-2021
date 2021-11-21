@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 public class LevelWave
 {
-    public LadyBug lady;
     public Dictionary<Bug, int> bugRegistry;
     List<Bug> bugList;
     bool isDone = false;
     int spawnRate;
-    // Start is called before the first frame update
     public LevelWave(Dictionary<Bug, int> bugRegistry, int spawnRate)
     {
         BugEvents.onDeath += this.bugDead;
