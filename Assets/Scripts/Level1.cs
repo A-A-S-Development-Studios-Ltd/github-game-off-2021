@@ -29,6 +29,8 @@ public class Level1 : MonoBehaviour
     }
     void OnWaveComplete(Wave wave)
     {
+        wave = null;
+        currentWave = null;
         StartNextWave();
     }
     Wave GetRamdomWave()
