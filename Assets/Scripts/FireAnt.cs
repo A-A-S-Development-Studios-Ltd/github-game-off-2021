@@ -16,7 +16,6 @@ public class FireAnt : Bug
 
     public override void PlayDeathAnimation()
     {
-        Debug.Log("The Fire Ant Died!!");
         Instantiate(deathAnimation, this.transform.position, Quaternion.identity);
         Instantiate(powerUp, this.transform.position, Quaternion.identity);
     }

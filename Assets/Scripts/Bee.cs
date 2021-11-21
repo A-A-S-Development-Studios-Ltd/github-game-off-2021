@@ -16,7 +16,6 @@ public class Bee : Bug
 
     public override void PlayDeathAnimation()
     {
-        Debug.Log("The Bee Died!!");
         Instantiate(deathAnimation, this.transform.position, Quaternion.identity);
         Instantiate(powerUp, this.transform.position, Quaternion.identity);
     }

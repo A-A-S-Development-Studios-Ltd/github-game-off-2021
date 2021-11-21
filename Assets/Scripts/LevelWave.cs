@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 public class LevelWave
 {
     public Dictionary<Bug, int> bugRegistry;
     List<Bug> bugList;
-    bool isDone = false;
     int spawnRate;
     public LevelWave(Dictionary<Bug, int> bugRegistry, int spawnRate)
     {
@@ -21,20 +21,14 @@ public class LevelWave
             bugList.AddRange(BugGenerator.generate(bug: item.Key, count: item.Value));
         }
     }
-    private void Update()
-    {
-
-    }
-    public bool IsDone()
-    {
-        return isDone;
-    }
     public void bugDead(Bug bug)
     {
+        Debug.Log("bug is dead----------");
         bugList.Remove(bug);
         if (bugList.Count == 0)
         {
-            isDone = true;
+            Debug.Log("what the fff");
+            WaveEvents.WaveComplete(this);
         }
     }
 }

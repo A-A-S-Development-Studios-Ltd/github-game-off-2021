@@ -20,9 +20,6 @@ public class Bug : MonoBehaviour
     {
         get { return 5; }
     }
-
-
-
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -34,7 +31,6 @@ public class Bug : MonoBehaviour
     {
         this.gameMap = map;
     }
-
     void Update()
     {
         if (!isMoving && this.gameMap != null)
@@ -65,6 +61,7 @@ public class Bug : MonoBehaviour
     private void OnMouseDown()
     {
         this.PlayDeathAnimation();
+        BugEvents.BugDead(this);
         Destroy(this.gameObject);
     }
     private void FixedUpdate()

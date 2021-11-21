@@ -14,7 +14,7 @@ public class StaminaBar : MonoBehaviour
     private Slider slider;
 
     private GameObject SliderFill;
-    private Color greenFill = new Color32(113,255,32,100);
+    private Color greenFill = new Color32(113, 255, 32, 100);
 
     private IEnumerator coroutine;
 
@@ -40,7 +40,6 @@ public class StaminaBar : MonoBehaviour
     {
         if (gameEngine.IsExhausted())
         {
-            Debug.Log("You're exhausted");
 
             if (!isShaking) { StartCoroutine(ShakeCamera()); }
 
@@ -53,7 +52,7 @@ public class StaminaBar : MonoBehaviour
         {
             currentStamina = maxStamina;
             gameEngine.SetExaustion(true);
-            
+
             SliderFill.GetComponent<Image>().color = Color.red;
         }
     }

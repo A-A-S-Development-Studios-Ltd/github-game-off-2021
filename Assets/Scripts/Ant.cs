@@ -14,7 +14,6 @@ public class Ant : Bug
     }
     public override void PlayDeathAnimation()
     {
-        Debug.Log("The Ant Died!!");
         Instantiate(deathAnimation, this.transform.position, Quaternion.identity);
     }
 }

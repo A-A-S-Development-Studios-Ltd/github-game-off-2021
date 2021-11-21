@@ -27,7 +27,6 @@ public class ClickPowerUp : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Clicked PowerUp");
         Destroy(gameObject);
     }
 }

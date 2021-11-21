@@ -28,7 +28,6 @@ public class LadyBugOld : MonoBehaviour
         if (!isMoving)
         {
             var speedMultiplier = Random.Range(2, 6);
-            Debug.Log(speedMultiplier);
             if (speedMultiplier == 3)
             {
                 targetPosition = _gameMap.GetSpawnPosition();
