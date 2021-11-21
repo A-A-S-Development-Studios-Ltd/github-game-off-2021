@@ -16,6 +16,12 @@ public class Bug : MonoBehaviour
     {
         get { return 2f; }
     }
+    public virtual int score
+    {
+        get { return 5; }
+    }
+
+
 
     private void Start()
     {
@@ -52,12 +58,12 @@ public class Bug : MonoBehaviour
             isMoving = true;
         }
     }
-    public virtual void PlayDeathAnimation() {
-        Debug.Log("PlayDeath");
+    public virtual void PlayDeathAnimation()
+    {
+        //code is in subclass
     }
     private void OnMouseDown()
     {
-        Debug.Log("Some Gibberish");
         this.PlayDeathAnimation();
         Destroy(this.gameObject);
     }
@@ -87,9 +93,4 @@ public class Bug : MonoBehaviour
         }
         rb.MovePosition(rb.position + currentPosition * moveSpeed * Time.fixedDeltaTime);
     }
-
-    // private void OnMouseDown()
-    // {
-    //     this.PlayDeathAnimation();
-    // }
 }

@@ -12,34 +12,42 @@ public class Level1 : MonoBehaviour
     public GoldLadyBug goldLadyBug;
     public FireAnt fireAnt;
     public StinkBug stinkBug;
-    public GameMapper gameMap;
+
     public List<Bug> bugList;
+    public LevelWave currentWave;
+
+
+    LevelWave w2;
+
     void Start()
     {
-        gameMap = new GameMapper();
-        bugList = new List<Bug>();
-        int count = Random.Range(1, 3);
-        bugList.AddRange(bugGenerator(count: count, bug: lady, gameMap: gameMap));
-        //count = Random.Range(1, 5);
-        bugList.AddRange(bugGenerator(count: count, bug: bee, gameMap: gameMap));
-        //count = Random.Range(1, 2);
-        bugList.AddRange(bugGenerator(count: count, bug: goldLadyBug, gameMap: gameMap));
-        //count = Random.Range(1, 2);
-        bugList.AddRange(bugGenerator(count: count, bug: ant, gameMap: gameMap));
-        //count = Random.Range(1, 3);
-        bugList.AddRange(bugGenerator(count: count, bug: beetle, gameMap: gameMap));
-        //count = Random.Range(1, 3);
-        bugList.AddRange(bugGenerator(count: count, bug: stinkBug, gameMap: gameMap));
+
+        //BugGenerator.generate(count: 10, bug: lady);
+
+        Dictionary<Bug, int> level1Bugs = new Dictionary<Bug, int>();
+        level1Bugs.Add(lady, 10);
+        level1Bugs.Add(goldLadyBug, 2);
+        level1Bugs.Add(fireAnt, 1);
+        LevelWave w1 = new LevelWave(level1Bugs, 2);
+        currentWave = w1;
+        currentWave.StartWave();
+
+
     }
-    List<Bug> bugGenerator(int count, Bug bug, GameMapper gameMap)
+    private void Update()
     {
-        List<Bug> bugs = new List<Bug>();
-        for (int i = 0; i < count; i++)
+        if (currentWave != null)
         {
-            Bug bugInstance = Instantiate(bug, gameMap.GetSpawnPosition(), Quaternion.identity);
-            bugInstance.SetMap(gameMap);
-            bugs.Add(bugInstance);
+            if (currentWave.IsDone())
+            {
+
+                spawnNextWave();
+
+            }
         }
-        return bugs;
+    }
+    void spawnNextWave()
+    {
+        Debug.Log("Shoudl spawn next wave!");
     }
 }

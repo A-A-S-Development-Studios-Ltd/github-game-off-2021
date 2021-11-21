@@ -30,6 +30,7 @@ public class GameEngine : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         timer.InitWithValue(60);
+        BugEvents.onDeath += this.updateScore;
     }
 
     private void FixedUpdate()
@@ -54,7 +55,7 @@ public class GameEngine : MonoBehaviour
         }
     }
 
-    private void Update() 
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -82,44 +83,21 @@ public class GameEngine : MonoBehaviour
             Debug.Log(hitInformation.collider);
 
             if (hitInformation.collider != null)
-            {      
+            {
                 staminaBar.UseStamina(hitStaminaCost);
                 GameObject touchedObject = hitInformation.transform.gameObject;
                 Debug.Log("Touched " + touchedObject.transform.name);
-
-                switch (touchedObject.transform.tag)
-                {
-                    case "Bee":
-                        score += 25;                        
-                        break;
-                    case "Ant":
-                        score += 5;
-                        break;
-                    case "Beetle":
-                        score += 15;
-                        break;
-                    case "FireAnt":
-                        score += 25;
-                        break;
-                    case "GoldBug":
-                        score += 100;
-                        break;
-                    case "LadyBug":
-                        score += 25;
-                        break;
-                    case "StinkBug":
-                        score += 25;
-                        break;
-                    default:
-                        break;
-                }
-
-                scoreLabel.text = "Score: " + score;     
-                              
-            } else {
+            }
+            else
+            {
                 staminaBar.UseStamina(missStaminaCost);
             }
         }
+    }
+    public void updateScore(Bug bug)
+    {
+        score += bug.score;
+        scoreLabel.text = "Score: " + score;
     }
 
     private void PlayLoop()

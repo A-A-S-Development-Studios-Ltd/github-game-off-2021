@@ -8,8 +8,12 @@ public class Beetle : Bug
     {
         get { return 2f; }
     }
-    public override void PlayDeathAnimation() {
-        Debug.Log("The Beetle Died!!");
+    public override int score
+    {
+        get { return 15; }
+    }
+    public override void PlayDeathAnimation()
+    {
         Instantiate(deathAnimation, this.transform.position, Quaternion.identity);
     }
 }

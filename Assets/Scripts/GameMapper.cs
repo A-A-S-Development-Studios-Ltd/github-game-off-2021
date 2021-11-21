@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameMapper
 {
+
     private int _boderWidth = 250;
     private int _borderOffset = 50;
     static int _leftMin;
@@ -47,6 +48,11 @@ public class GameMapper
         gameSections = new List<GameSection>();
 
         this.GenerateGameSections();
+    }
+    private static readonly GameMapper _instance = new GameMapper();
+    public static GameMapper Instance
+    {
+        get { return _instance; }
     }
     private void GenerateGameSections()
     {

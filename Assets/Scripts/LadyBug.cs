@@ -8,7 +8,12 @@ public class LadyBug : Bug
     {
         get { return 2f; }
     }
-    public override void PlayDeathAnimation() {
+    public override int score
+    {
+        get { return 25; }
+    }
+    public override void PlayDeathAnimation()
+    {
         Debug.Log("The LadyBug Died!!");
         Instantiate(deathAnimation, this.transform.position, Quaternion.identity);
     }
