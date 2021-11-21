@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3260638025957549315}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.939033, y: -1.5668977, z: -21.53356}
   m_LocalScale: {x: 0.35000196, y: 0.35000196, z: 1}
   m_ConstrainProportionsScale: 0
@@ -187,4 +187,4 @@ MonoBehaviour:
   moveSpeed: 5
   autoDestroy: 0
   deathAnimation: {fileID: 5324196249880785302, guid: c01389032cab7844580dced392788c55, type: 3}
-  powerUp: {fileID: 2636018657226032609, guid: 9f1dcdf8d8a395d46982e6cc9dbe0ae0, type: 3}
+  powerUp: {fileID: 676416568051432823, guid: b6303763e92f5db4facb8504b5c5b9e8, type: 3}

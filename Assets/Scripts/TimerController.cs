@@ -63,6 +63,11 @@ public class TimerController : MonoBehaviour
     {
         timeRemaining = value;
     }
+    
+    public void IncreaseTime(int addTime)
+    {
+        timeRemaining = timeRemaining + addTime;
+    }
 
     public void ToggleTimer()
     {

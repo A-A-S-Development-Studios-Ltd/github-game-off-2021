@@ -73,6 +73,10 @@ public class GameEngine : MonoBehaviour
             {
                 staminaBar.UseStamina(hitStaminaCost);
                 GameObject touchedObject = hitInformation.transform.gameObject;
+
+                // if(touchedObject.transform.name == "PowerUp-Timer(Clone)") {
+                //     timer.IncreaseTime(10);
+                // }
             }
             else
             {
@@ -80,6 +84,7 @@ public class GameEngine : MonoBehaviour
             }
         }
     }
+
     public void updateScore(Bug bug)
     {
         if (scoreLabel != null)
@@ -88,6 +93,12 @@ public class GameEngine : MonoBehaviour
             scoreLabel.text = "Score: " + score;
         }
     }
+    
+    public void updateTime(int newtime)
+    {
+        timer.IncreaseTime(newtime);
+    }
+
 
     private void PlayLoop()
     {

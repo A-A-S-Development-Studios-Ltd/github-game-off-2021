@@ -171,4 +171,4 @@ MonoBehaviour:
   moveSpeed: 5
   autoDestroy: 0
   deathAnimation: {fileID: 5324196249880785302, guid: c01389032cab7844580dced392788c55, type: 3}
-  powerUp: {fileID: 5107294895199055347, guid: efbe6f9c9c464ea499aa0497a24c1160, type: 3}
+  powerUp: {fileID: 676416568051432823, guid: b6303763e92f5db4facb8504b5c5b9e8, type: 3}
