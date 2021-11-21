@@ -12,6 +12,7 @@ public class TimerController : MonoBehaviour
     void Start()
     {
         label = GetComponent<Text>();
+        TimerEvents.onUpdate += IncreaseTime;
     }
 
     void FixedUpdate()
@@ -66,7 +67,7 @@ public class TimerController : MonoBehaviour
     
     public void IncreaseTime(int addTime)
     {
-        timeRemaining = timeRemaining + addTime;
+        timeRemaining = timeRemaining + addTime;        
     }
 
     public void ToggleTimer()
