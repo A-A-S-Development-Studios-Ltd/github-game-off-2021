@@ -26,8 +26,8 @@ public class Wave
         bugList.Remove(bug);
         if (bugList.Count == 0)
         {
-            Debug.Log("Teh wave should have enede");
             WaveEvents.WaveComplete(this);
+            BugEvents.onDeath -= this.bugDead;
         }
     }
 }
