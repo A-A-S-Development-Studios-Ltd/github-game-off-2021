@@ -9,7 +9,7 @@ public class Bee : Bug
     {
         get { return 3f; }
     }
-    
+
     public override void PlayDeathAnimation() {
         Debug.Log("The Bee Died!!");
         Instantiate(deathAnimation, this.transform.position, Quaternion.identity);

@@ -21,7 +21,7 @@ public class GameEngine : MonoBehaviour
 
     private bool isExhausted = false;
 
-    private AudioSource audioSource;
+    AudioSource audioSource;
 
     public TimerController timer;
     private GameState gameState = GameState.PLAY;
@@ -68,23 +68,24 @@ public class GameEngine : MonoBehaviour
 
             Physics.Raycast(ray, out hit, 100.0f);
 
-            Debug.Log("test: " + hit);
+            // Debug.Log("test: " + hit);
             if (hit.transform != null && hit.transform.gameObject != null)
             {
 
             }
 
             Vector3 touchPosWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
             Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
-
             RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
 
+            Debug.Log(hitInformation);
+            Debug.Log(hitInformation.collider);
+
             if (hitInformation.collider != null)
-            {
+            {      
                 staminaBar.UseStamina(hitStaminaCost);
                 GameObject touchedObject = hitInformation.transform.gameObject;
-                //Debug.Log("Touched " + touchedObject.transform.name);
+                Debug.Log("Touched " + touchedObject.transform.name);
 
                 switch (touchedObject.transform.tag)
                 {
@@ -113,11 +114,8 @@ public class GameEngine : MonoBehaviour
                         break;
                 }
 
-                AudioClip clip = Resources.Load<AudioClip>("Audio/goblin-death");
-                audioSource.clip = clip;
-                audioSource.Play();
-
-                scoreLabel.text = "Score: " + score;
+                scoreLabel.text = "Score: " + score;     
+                              
             } else {
                 staminaBar.UseStamina(missStaminaCost);
             }
