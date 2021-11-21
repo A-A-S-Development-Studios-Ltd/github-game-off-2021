@@ -23,11 +23,10 @@ public class Wave
     }
     public void bugDead(Bug bug)
     {
-        Debug.Log("bug is dead----------");
         bugList.Remove(bug);
         if (bugList.Count == 0)
         {
-            Debug.Log("what the fff");
+            Debug.Log("Teh wave should have enede");
             WaveEvents.WaveComplete(this);
         }
     }
