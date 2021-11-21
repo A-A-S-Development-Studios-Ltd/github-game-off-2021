@@ -82,8 +82,11 @@ public class GameEngine : MonoBehaviour
     }
     public void updateScore(Bug bug)
     {
-        score += bug.score;
-        scoreLabel.text = "Score: " + score;
+        if (scoreLabel != null)
+        {
+            score += bug.score;
+            scoreLabel.text = "Score: " + score;
+        }
     }
 
     private void PlayLoop()

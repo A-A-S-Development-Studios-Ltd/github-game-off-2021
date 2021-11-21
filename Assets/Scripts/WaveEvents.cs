@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class WaveEvents : MonoBehaviour
 {
-    public delegate void WaveEventHandler(LevelWave wave);
+    public delegate void WaveEventHandler(Wave wave);
 
     public static event WaveEventHandler onComplete;
 
-    public static void WaveComplete(LevelWave wave)
+    public static void WaveComplete(Wave wave)
     {
         if (onComplete != null)
         {

@@ -61,7 +61,6 @@ public class Bug : MonoBehaviour
     private void OnMouseDown()
     {
         this.PlayDeathAnimation();
-
         Destroy(this.gameObject);
     }
     private void OnDestroy()

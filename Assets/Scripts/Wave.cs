@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class LevelWave
+public class Wave
 {
     public Dictionary<Bug, int> bugRegistry;
     List<Bug> bugList;
     int spawnRate;
-    public LevelWave(Dictionary<Bug, int> bugRegistry, int spawnRate)
+    public Wave(Dictionary<Bug, int> bugRegistry, int spawnRate)
     {
         BugEvents.onDeath += this.bugDead;
         bugList = new List<Bug>();
