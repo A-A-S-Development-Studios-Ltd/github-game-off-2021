@@ -171,7 +171,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 5
   autoDestroy: 0
-  deathAnimation: {fileID: 5324196249880785302, guid: c01389032cab7844580dced392788c55, type: 3}
+  deathAnimation: {fileID: 9026545040381968841, guid: 2f56b361dda533647a01186448488f1e, type: 3}
+  specialDeathAnimation: {fileID: 5324196249880785302, guid: c01389032cab7844580dced392788c55, type: 3}
   powerUp: {fileID: 676416568051432823, guid: b6303763e92f5db4facb8504b5c5b9e8, type: 3}
 --- !u!114 &5786230820235905765
 MonoBehaviour:

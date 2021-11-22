@@ -3,7 +3,10 @@ using UnityEngine;
 public class FireAnt : Bug
 {
     public GameObject deathAnimation;
+    public GameObject specialDeathAnimation;
     public GameObject powerUp;
+
+    private int dropRate = 25;
 
     public override float baseSpeed
     {
@@ -16,7 +19,14 @@ public class FireAnt : Bug
 
     public override void PlayDeathAnimation()
     {
-        Instantiate(deathAnimation, this.transform.position, Quaternion.identity);
-        Instantiate(powerUp, this.transform.position, Quaternion.identity);
+        int randomValue = Random.Range(0,100);
+
+        if (randomValue <= dropRate) 
+        {
+            Instantiate(specialDeathAnimation, this.transform.position, Quaternion.identity);
+            Instantiate(powerUp, this.transform.position, Quaternion.identity);
+        } else  {
+            Instantiate(deathAnimation, this.transform.position, Quaternion.identity);
+        }
     }
 }

@@ -36,9 +36,9 @@ public class Level1 : MonoBehaviour
     Wave GetRamdomWave()
     {
         Dictionary<Bug, int> bugs = new Dictionary<Bug, int>();
-        bugs.Add(ant, Random.Range(1, waveCount));
+        bugs.Add(ant, Random.Range(1, waveCount * 3));
         bugs.Add(bee, Random.Range(1, waveCount));
-        bugs.Add(beetle, Random.Range(1, waveCount));
+        bugs.Add(beetle, Random.Range(1, waveCount * 2));
         bugs.Add(goldLadyBug, 2);
         bugs.Add(fireAnt, Random.Range(1, 3));
         bugs.Add(ladyBug, Random.Range(1, waveCount));
