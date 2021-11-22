@@ -12,17 +12,63 @@ public class Level1 : MonoBehaviour
     public LadyBug ladyBug;
     public StinkBug stinkBug;
     public List<Bug> bugList;
+
     public Wave currentWave;
     public int waveCount;
+    public int bugCount;
+    public bool isInfiniteMode;
     void Start()
     {
+        bugList = new List<Bug> { ant, bee, beetle, goldLadyBug, fireAnt, ladyBug, stinkBug, ant, bee, beetle, fireAnt, ladyBug, stinkBug, ladyBug, ant, beetle, ladyBug, ant, beetle };
+
         WaveEvents.onComplete += this.OnWaveComplete;
         waveCount = 0;
-        StartNextWave();
+        bugCount = 0;
+        BugEvents.onDeath += OnSquish;
+        //change infinite mode to change between modes
+        isInfiniteMode = false;
+        if (isInfiniteMode == false)
+        {
+            Debug.Log("starting wave");
+            StartNextWave();
+        }
     }
+    private void Update()
+    {
+        if (isInfiniteMode == true)
+        {
+            Bug bug = bugList[Random.Range(0, bugList.Count - 1)];
+            int count = Random.Range(1, 3);
+            int time = Mathf.FloorToInt(Time.time);
+            Debug.Log("playing infinite: " + time);
+            if (bugCount < 3)
+            {
+                BugGenerator.generate(bug: bug, count: count);
+                bugCount += count;
+                bug = bugList[Random.Range(0, bugList.Count - 1)];
+                BugGenerator.generate(bug: bug, count: count);
+                bugCount += count;
+            }
+            else if (bugCount > 3 && bugCount < 11)
+            {
+                int ranMod = Random.Range(2, 3);
+                if (time % ranMod == 0)
+                {
+                    BugGenerator.generate(bug: bug, count: count);
+                    bugCount += count;
+                }
+            }
+        }
+    }
+    public void OnSquish(Bug bug)
+    {
+        bugCount--;
+    }
+
     void StartNextWave()
     {
         waveCount++;
+
         currentWave = GetRamdomWave();
         currentWave.StartWave();
         Debug.Log("Starting wave: " + waveCount);
@@ -43,20 +89,20 @@ public class Level1 : MonoBehaviour
         Dictionary<Bug, int> bugs = new Dictionary<Bug, int>();
         if (waveCount > 0)
         {
-            bugs.Add(ant, Random.Range(1, max * 3));
+            bugs.Add(ladyBug, Random.Range(1, max));
         }
         if (waveCount > 2)
         {
-            bugs.Add(beetle, Random.Range(1, max * 2));
             bugs.Add(bee, Random.Range(1, max));
         }
         if (waveCount > 4)
-        {          
-            bugs.Add(ladyBug, Random.Range(1, max));
+        {
+            bugs.Add(goldLadyBug, 2);
+            bugs.Add(beetle, Random.Range(1, max));
         }
         if (waveCount > 6)
-        {            
-            bugs.Add(goldLadyBug, 2);  
+        {
+            bugs.Add(ant, Random.Range(1, max));
         }
         if (waveCount > 8)
         {
@@ -66,6 +112,7 @@ public class Level1 : MonoBehaviour
         {
             bugs.Add(stinkBug, Random.Range(1, max));
         }
+        //return gameObject.AddComponent<Wave>();
         return new Wave(bugs, waveCount);
     }
 }
