@@ -43,20 +43,20 @@ public class Level1 : MonoBehaviour
         Dictionary<Bug, int> bugs = new Dictionary<Bug, int>();
         if (waveCount > 0)
         {
-            bugs.Add(ladyBug, Random.Range(1, max));
+            bugs.Add(ant, Random.Range(1, max * 3));
         }
         if (waveCount > 2)
         {
+            bugs.Add(beetle, Random.Range(1, max * 2));
             bugs.Add(bee, Random.Range(1, max));
         }
         if (waveCount > 4)
-        {
-            bugs.Add(goldLadyBug, 2);
-            bugs.Add(beetle, Random.Range(1, max));
+        {          
+            bugs.Add(ladyBug, Random.Range(1, max));
         }
         if (waveCount > 6)
-        {
-            bugs.Add(ant, Random.Range(1, max));
+        {            
+            bugs.Add(goldLadyBug, 2);  
         }
         if (waveCount > 8)
         {
