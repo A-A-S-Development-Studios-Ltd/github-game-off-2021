@@ -29,7 +29,6 @@ public class Level1 : MonoBehaviour
         isInfiniteMode = false;
         if (isInfiniteMode == false)
         {
-            Debug.Log("starting wave");
             StartNextWave();
         }
     }
@@ -111,6 +110,24 @@ public class Level1 : MonoBehaviour
         if (waveCount > 10)
         {
             bugs.Add(stinkBug, Random.Range(1, max));
+        }
+        if (waveCount > 10)
+        {
+            Bug bug = bugList[Random.Range(0, bugList.Count - 1)];
+            int count = Random.Range(1, 3);
+            bugs[bug] = bugs[bug] + count;
+        }
+        if (waveCount > 14)
+        {
+            Bug bug = bugList[Random.Range(0, bugList.Count - 1)];
+            int count = Random.Range(1, 3);
+            bugs[bug] = bugs[bug] + count;
+        }
+        if (waveCount > 16)
+        {
+            Bug bug = bugList[Random.Range(0, bugList.Count - 1)];
+            int count = Random.Range(1, 3);
+            bugs[bug] = bugs[bug] + count;
         }
         //return gameObject.AddComponent<Wave>();
         return new Wave(bugs, waveCount);
