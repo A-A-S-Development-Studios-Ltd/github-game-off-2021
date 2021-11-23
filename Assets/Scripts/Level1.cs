@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Level1 : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Level1 : MonoBehaviour
     public Wave currentWave;
     public int waveCount;
     public int bugCount;
+    public Text waveLabel;
     public bool isInfiniteMode;
     void Start()
     {
@@ -67,6 +69,7 @@ public class Level1 : MonoBehaviour
     void StartNextWave()
     {
         waveCount++;
+        waveLabel.text = "Wave: " + waveCount;
 
         currentWave = GetRamdomWave();
         currentWave.StartWave();
@@ -80,7 +83,9 @@ public class Level1 : MonoBehaviour
     Wave GetRamdomWave()
     {
         var max = waveCount;
-        Debug.Log("Wave: " + waveCount);
+        if(max <= 2) {
+            max = 6;
+        }
         if (max > 3)
         {
             max = waveCount % 3;
@@ -88,7 +93,7 @@ public class Level1 : MonoBehaviour
         Dictionary<Bug, int> bugs = new Dictionary<Bug, int>();
         if (waveCount > 0)
         {
-            bugs.Add(ladyBug, Random.Range(2, max+3));
+            bugs.Add(ladyBug, Random.Range(4, max+3));
         }
         if (waveCount > 3)
         {

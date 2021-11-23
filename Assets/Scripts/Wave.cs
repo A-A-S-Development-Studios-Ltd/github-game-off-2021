@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Threading;
 using System.Threading.Tasks;
 public class Wave
@@ -36,7 +37,12 @@ public class Wave
     public void bugDead(Bug bug)
     {
         bugList.Remove(bug);
-        if (bugList.Count <= 2)
+        if (bugList.Count <= 2 && waveCount > 2)
+        {
+            WaveEvents.WaveComplete(this);
+            BugEvents.onDeath -= this.bugDead;
+        }
+        else if (bugList.Count == 0) 
         {
             WaveEvents.WaveComplete(this);
             BugEvents.onDeath -= this.bugDead;
