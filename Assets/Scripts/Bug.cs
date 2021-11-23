@@ -5,6 +5,7 @@ public class Bug : MonoBehaviour
     private Animator animator;
     public Rigidbody2D rb;
     private GameMapper gameMap;
+    private GameEngine gameEngine;
     bool isMoving;
     public float moveSpeed = 5f;
     Vector2 targetPosition;
@@ -22,6 +23,7 @@ public class Bug : MonoBehaviour
     }
     private void Start()
     {
+        gameEngine = GameObject.FindWithTag("GameEngine").GetComponent<GameEngine>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         isMoving = false;
@@ -60,8 +62,11 @@ public class Bug : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        this.PlayDeathAnimation();
-        Destroy(this.gameObject);
+        if(!gameEngine.IsExhausted()) {
+            gameEngine.staminaBar.UseStamina(-5);
+            this.PlayDeathAnimation();
+            Destroy(this.gameObject);
+        }
     }
     private void OnDestroy()
     {

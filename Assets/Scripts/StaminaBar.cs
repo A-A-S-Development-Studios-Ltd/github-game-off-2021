@@ -68,13 +68,17 @@ public class StaminaBar : MonoBehaviour
     {
         while (true)
         {
-            if(gameEngine.IsExhausted()){
-                yield return new WaitForSeconds(0.05f);
-            } else {
+            if(gameEngine.IsExhausted())
+            {
+                yield return new WaitForSeconds(0.06f);
+            } 
+            else 
+            {
                 yield return new WaitForSeconds(0.1f);
             }
             
             currentStamina = Mathf.Max(currentStamina - 1, 0);
+
             if (currentStamina == 30)
             {
                 gameEngine.SetExaustion(false);

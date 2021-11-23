@@ -16,7 +16,7 @@ public class GameEngine : MonoBehaviour
     public Text scoreLabel;
     public StaminaBar staminaBar;
     private int score = 0;
-    private int missStaminaCost = 12;
+    private int missStaminaCost = 10;
     private int hitStaminaCost = 2;
 
     private bool isExhausted = false;
@@ -62,20 +62,15 @@ public class GameEngine : MonoBehaviour
                 return;
             }
 
+            staminaBar.UseStamina(missStaminaCost);
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Physics.Raycast(ray, out hit, 100.0f);
             Vector3 touchPosWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
             RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
-            if (hitInformation.collider != null)
-            {
-                staminaBar.UseStamina(hitStaminaCost);
-            }
-            else
-            {
-                staminaBar.UseStamina(missStaminaCost);
-            }
+            
         }
     }
 
