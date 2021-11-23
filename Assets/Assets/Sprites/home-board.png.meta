@@ -107,9 +107,9 @@ TextureImporter:
       name: home-board_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 1189
-        width: 1248
+        x: 114
+        y: 1642
+        width: 1249
         height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 393cdda2dff4f41338b106f241a78726
-      internalID: 793553561
+      spriteID: 3845cd2df335b4524978d8f6d72d7e09
+      internalID: 2114894529
       vertices: []
       indices: 
       edges: []
@@ -128,9 +128,9 @@ TextureImporter:
       name: home-board_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 817
-        width: 1248
+        x: 110
+        y: 1270
+        width: 1249
         height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf8de47184c9e4fb3a6ba55940c78776
-      internalID: -540489460
+      spriteID: 9e4e36bac5875492a8b39ddac69323fa
+      internalID: 543100063
       vertices: []
       indices: 
       edges: []
@@ -149,9 +149,9 @@ TextureImporter:
       name: home-board_2
       rect:
         serializedVersion: 2
-        x: 51
-        y: 3
-        width: 200
+        x: 159
+        y: 456
+        width: 201
         height: 740
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b82fbd8fb3124a03827c8052aeec8e8
-      internalID: -1171917165
+      spriteID: e7b1fe72339db4933a90a63be7660164
+      internalID: -1480615500
       vertices: []
       indices: 
       edges: []
@@ -170,9 +170,9 @@ TextureImporter:
       name: home-board_3
       rect:
         serializedVersion: 2
-        x: 380
-        y: 435
-        width: 500
+        x: 489
+        y: 888
+        width: 499
         height: 255
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f4544f34ff5a40e4b46af31b14a6ded
-      internalID: 435637647
+      spriteID: fa342b3f899ae43d488f395eb331b2cd
+      internalID: 56808132
       vertices: []
       indices: 
       edges: []
@@ -191,8 +191,8 @@ TextureImporter:
       name: home-board_4
       rect:
         serializedVersion: 2
-        x: 1027
-        y: 3
+        x: 1135
+        y: 456
         width: 200
         height: 740
       alignment: 0
@@ -202,8 +202,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7319262845400493182fe19de97bdb9c
-      internalID: 827718132
+      spriteID: a7460b6a40b1b45869484c0ee5956cc0
+      internalID: 1718993494
       vertices: []
       indices: 
       edges: []
@@ -212,8 +212,8 @@ TextureImporter:
       name: home-board_5
       rect:
         serializedVersion: 2
-        x: 403
-        y: 81
+        x: 511
+        y: 534
         width: 500
         height: 255
       alignment: 0
@@ -223,8 +223,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd81145015bcb4bfcaaafcf6f23b416e
-      internalID: 1210631739
+      spriteID: 22c73be30760445f4abe512aa444cea7
+      internalID: -1270602524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home-board_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 1518
+        height: 381
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7981c88f071f49f5a3c4281eeacef8d
+      internalID: 26603870
       vertices: []
       indices: 
       edges: []
@@ -240,12 +261,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      home-board_4: 827718132
-      home-board_2: -1171917165
-      home-board_3: 435637647
-      home-board_1: -540489460
-      home-board_5: 1210631739
-      home-board_0: 793553561
+      home-board_4: 1718993494
+      home-board_2: -1480615500
+      home-board_3: 56808132
+      home-board_1: 543100063
+      home-board_5: -1270602524
+      home-board_0: 2114894529
+      home-board_6: 26603870
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

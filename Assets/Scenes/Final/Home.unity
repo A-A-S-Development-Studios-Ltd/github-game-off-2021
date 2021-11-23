@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 184733249}
   - component: {fileID: 184733248}
   m_Layer: 5
-  m_Name: new-game
+  m_Name: title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -534,8 +534,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 105.01}
-  m_SizeDelta: {x: 468.38, y: 118.6}
+  m_AnchoredPosition: {x: 0.0000019073, y: 116.97}
+  m_SizeDelta: {x: 570.13, y: 143.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &184733248
 MonoBehaviour:
@@ -556,7 +556,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -540489460, guid: 104883a35bc0c4332b8343e43408ac88, type: 3}
+  m_Sprite: {fileID: 26603870, guid: 104883a35bc0c4332b8343e43408ac88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -857,7 +857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &330120996
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2299,7 +2299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 827718132, guid: 104883a35bc0c4332b8343e43408ac88, type: 3}
+  m_Sprite: {fileID: -1480615500, guid: 104883a35bc0c4332b8343e43408ac88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3501,7 +3501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 435637647, guid: 104883a35bc0c4332b8343e43408ac88, type: 3}
+  m_Sprite: {fileID: 56808132, guid: 104883a35bc0c4332b8343e43408ac88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4962,7 +4962,7 @@ GameObject:
   - component: {fileID: 1888435771}
   - component: {fileID: 1888435770}
   m_Layer: 5
-  m_Name: survival
+  m_Name: new-game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4985,8 +4985,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -13.590004}
-  m_SizeDelta: {x: 468.38, y: 118.6}
+  m_AnchoredPosition: {x: -5.2350035, y: -13.73999}
+  m_SizeDelta: {x: 467.21, y: 118.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1888435770
 MonoBehaviour:
@@ -5064,7 +5064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 793553561, guid: 104883a35bc0c4332b8343e43408ac88, type: 3}
+  m_Sprite: {fileID: 543100063, guid: 104883a35bc0c4332b8343e43408ac88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5140,7 +5140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1171917165, guid: 104883a35bc0c4332b8343e43408ac88, type: 3}
+  m_Sprite: {fileID: 1718993494, guid: 104883a35bc0c4332b8343e43408ac88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
