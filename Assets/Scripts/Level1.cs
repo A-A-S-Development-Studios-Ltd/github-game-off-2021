@@ -70,7 +70,6 @@ public class Level1 : MonoBehaviour
 
         currentWave = GetRamdomWave();
         currentWave.StartWave();
-        Debug.Log("Starting wave: " + waveCount);
     }
     void OnWaveComplete(Wave wave)
     {

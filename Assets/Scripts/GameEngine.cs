@@ -61,8 +61,10 @@ public class GameEngine : MonoBehaviour
         {
             if (isExhausted)
             {
+                staminaBar.UseStamina(0);
                 return;
             }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Physics.Raycast(ray, out hit, 100.0f);
@@ -72,11 +74,6 @@ public class GameEngine : MonoBehaviour
             if (hitInformation.collider != null)
             {
                 staminaBar.UseStamina(hitStaminaCost);
-                GameObject touchedObject = hitInformation.transform.gameObject;
-
-                // if(touchedObject.transform.name == "PowerUp-Timer(Clone)") {
-                //     timer.IncreaseTime(10);
-                // }
             }
             else
             {

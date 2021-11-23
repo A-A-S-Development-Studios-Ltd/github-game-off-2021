@@ -18,6 +18,8 @@ public class StaminaBar : MonoBehaviour
 
     private IEnumerator coroutine;
 
+    public GameObject uiBar;
+
     private void Awake()
     {
         instance = this;
@@ -78,9 +80,8 @@ public class StaminaBar : MonoBehaviour
 
     IEnumerator ShakeCamera()
     {
-
         isShaking = true;
-        Transform cameraTransform = Camera.main.transform;
+        Transform cameraTransform = uiBar.transform;
         Vector3 startPosition = cameraTransform.position;
         float elapsedTime = 0f;
 

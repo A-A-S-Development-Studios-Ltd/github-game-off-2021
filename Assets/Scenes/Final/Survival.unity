@@ -256,6 +256,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &805463868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5861207212166345218, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
+  m_PrefabInstance: {fileID: 1704112286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &907916316 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5861207212463989045, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
@@ -371,6 +376,8 @@ MonoBehaviour:
   stinkBug: {fileID: 4897944514458233819, guid: 277436f1582783945a8b62849301f8a9, type: 3}
   bugList: []
   waveCount: 0
+  bugCount: 0
+  isInfiniteMode: 0
 --- !u!4 &1239740781
 Transform:
   m_ObjectHideFlags: 0
@@ -732,9 +739,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5861207211536837160, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
+      propertyPath: uiBar
+      value: 
+      objectReference: {fileID: 805463868}
+    - target: {fileID: 5861207211536837160, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
       propertyPath: gameEngine
       value: 
       objectReference: {fileID: 1960745704}
+    - target: {fileID: 5861207211536837160, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
+      propertyPath: mainCanvas
+      value: 
+      objectReference: {fileID: 1542172250}
     - target: {fileID: 5861207211693670678, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -46.399994
