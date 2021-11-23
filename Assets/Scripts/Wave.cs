@@ -36,7 +36,7 @@ public class Wave
     public void bugDead(Bug bug)
     {
         bugList.Remove(bug);
-        if (bugList.Count == 0)
+        if (bugList.Count <= 2)
         {
             WaveEvents.WaveComplete(this);
             BugEvents.onDeath -= this.bugDead;

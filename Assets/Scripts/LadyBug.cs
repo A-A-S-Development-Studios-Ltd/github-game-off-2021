@@ -10,7 +10,7 @@ public class LadyBug : Bug
     }
     public override int score
     {
-        get { return 25; }
+        get { return 5; }
     }
     public override void PlayDeathAnimation()
     {

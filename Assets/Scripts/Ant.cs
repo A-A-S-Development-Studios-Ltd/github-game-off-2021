@@ -10,7 +10,7 @@ public class Ant : Bug
     }
     public override int score
     {
-        get { return 5; }
+        get { return 10; }
     }
     public override void PlayDeathAnimation()
     {

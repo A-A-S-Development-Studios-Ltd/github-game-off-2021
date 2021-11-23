@@ -80,6 +80,7 @@ public class Level1 : MonoBehaviour
     Wave GetRamdomWave()
     {
         var max = waveCount;
+        Debug.Log("Wave: " + waveCount);
         if (max > 3)
         {
             max = waveCount % 3;
@@ -87,45 +88,42 @@ public class Level1 : MonoBehaviour
         Dictionary<Bug, int> bugs = new Dictionary<Bug, int>();
         if (waveCount > 0)
         {
-            bugs.Add(ladyBug, Random.Range(1, max));
+            bugs.Add(ladyBug, Random.Range(2, max+3));
         }
-        if (waveCount > 2)
+        if (waveCount > 3)
         {
+            bugs.Add(ant, Random.Range(3, max+6));
             bugs.Add(bee, Random.Range(1, max));
-        }
-        if (waveCount > 4)
-        {
-            bugs.Add(goldLadyBug, 2);
-            bugs.Add(beetle, Random.Range(1, max));
         }
         if (waveCount > 6)
         {
-            bugs.Add(ant, Random.Range(1, max));
+            bugs.Add(goldLadyBug, 2);
+            bugs.Add(beetle, Random.Range(3, max+6));
         }
         if (waveCount > 8)
         {
-            bugs.Add(fireAnt, Random.Range(1, max));
+            bugs.Add(fireAnt, Random.Range(3, max));
         }
         if (waveCount > 10)
         {
-            bugs.Add(stinkBug, Random.Range(1, max));
+            bugs.Add(stinkBug, Random.Range(3, max));
         }
         if (waveCount > 10)
         {
             Bug bug = bugList[Random.Range(0, bugList.Count - 1)];
-            int count = Random.Range(1, 3);
+            int count = Random.Range(3, 9);
             bugs[bug] = bugs[bug] + count;
         }
         if (waveCount > 14)
         {
             Bug bug = bugList[Random.Range(0, bugList.Count - 1)];
-            int count = Random.Range(1, 3);
+            int count = Random.Range(5, 12);
             bugs[bug] = bugs[bug] + count;
         }
-        if (waveCount > 16)
+        if (waveCount > 20)
         {
             Bug bug = bugList[Random.Range(0, bugList.Count - 1)];
-            int count = Random.Range(1, 3);
+            int count = Random.Range(6, 18);
             bugs[bug] = bugs[bug] + count;
         }
         //return gameObject.AddComponent<Wave>();

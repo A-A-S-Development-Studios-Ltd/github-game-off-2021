@@ -17,7 +17,6 @@ public class GameEngine : MonoBehaviour
     public StaminaBar staminaBar;
     private int score = 0;
     private int missStaminaCost = 10;
-    private int hitStaminaCost = 2;
 
     private bool isExhausted = false;
 
