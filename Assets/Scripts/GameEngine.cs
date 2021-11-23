@@ -21,14 +21,11 @@ public class GameEngine : MonoBehaviour
 
     private bool isExhausted = false;
 
-    AudioSource audioSource;
-
     public TimerController timer;
     private GameState gameState = GameState.PLAY;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         timer.InitWithValue(60);
         BugEvents.onDeath += this.updateScore;
     }
