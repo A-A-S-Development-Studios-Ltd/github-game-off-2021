@@ -15,6 +15,7 @@ public class GameEngine : MonoBehaviour
 
     public Text scoreLabel;
     public StaminaBar staminaBar;
+    public PopupManager popup;
     private int score = 0;
     private int missStaminaCost = 10;
 
@@ -25,7 +26,7 @@ public class GameEngine : MonoBehaviour
 
     private void Start()
     {
-        timer.InitWithValue(60);
+        timer.InitWithValue(3);
         BugEvents.onDeath += this.updateScore;
     }
 
@@ -39,6 +40,7 @@ public class GameEngine : MonoBehaviour
             case GameState.LOOSE:
                 timer.ToggleTimer();
                 gameState = GameState.FINISHED;
+                popup.ShowModal();
                 break;
             case GameState.WIN:
                 // TODO: - Display win overlay
@@ -116,7 +118,10 @@ public class GameEngine : MonoBehaviour
 
     public void TriggerPause()
     {
-        gameState = Time.timeScale == 1 ? GameState.PAUSE : GameState.PLAY;
-        Time.timeScale = Time.timeScale == 1 ? 0 : 1;
+        if (gameState == GameState.PLAY || gameState == GameState.PAUSE)
+        {
+            gameState = Time.timeScale == 1 ? GameState.PAUSE : GameState.PLAY;
+            Time.timeScale = Time.timeScale == 1 ? 0 : 1;
+        }
     }
 }

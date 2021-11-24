@@ -1102,6 +1102,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 146972559}
     m_Modifications:
+    - target: {fileID: 1975042498685149761, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 2008224668}
+    - target: {fileID: 7385387438937154112, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 368228484}
+    - target: {fileID: 7385387438937154112, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HideModal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385387438937154112, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopupManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7385387440062225688, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
       propertyPath: m_Name
       value: credit_popup
@@ -1205,6 +1221,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7385387440062225691, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
   m_PrefabInstance: {fileID: 368228482}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &368228484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1975042498685149761, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+  m_PrefabInstance: {fileID: 368228482}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8e8a54d56c04a0099a8a2f483df2d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &378352255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8497828597263445289, guid: c2e7c2de5c5814b0fa4e85492f3add34, type: 3}
@@ -3480,8 +3507,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2087954495}
-        m_TargetAssemblyTypeName: CreditPopup, Assembly-CSharp
+      - m_Target: {fileID: 368228484}
+        m_TargetAssemblyTypeName: PopupManager, Assembly-CSharp
         m_MethodName: ShowModal
         m_Mode: 1
         m_Arguments:
@@ -5446,6 +5473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2e7c2de5c5814b0fa4e85492f3add34, type: 3}
+--- !u!95 &2008224668 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7385387440062225693, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+  m_PrefabInstance: {fileID: 368228482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2021241019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5767,17 +5799,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2e7c2de5c5814b0fa4e85492f3add34, type: 3}
---- !u!114 &2087954495 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7385387440062225690, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
-  m_PrefabInstance: {fileID: 368228482}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e8e8a54d56c04a0099a8a2f483df2d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2089814441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4476582448132982564, guid: cbab0fd540845454c90f3101e25c7a6b, type: 3}
