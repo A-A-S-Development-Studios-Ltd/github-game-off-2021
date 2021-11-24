@@ -234,6 +234,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8591272973853176390, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 577394949}
+    - target: {fileID: 8591272973853176390, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadSurvival
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591272973853176390, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
 --- !u!224 &5244696 stripped
@@ -363,6 +375,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5861207212166345217, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
   m_PrefabInstance: {fileID: 1704112286}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &577394949 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2997661881893076693, guid: 51834a7365b7449c591e495e236e23a3, type: 3}
+  m_PrefabInstance: {fileID: 978696062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d067a5d3a454453babba6b28937c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &606311372 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5861207211536837160, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}

@@ -19,8 +19,9 @@ public class LevelLoader : MonoBehaviour
     {
         transition.SetTrigger("Start");
 
-        yield return new WaitForSeconds(transitionTime);
+        yield return new WaitForSecondsRealtime(transitionTime);
 
+        Time.timeScale = 1;
         SceneManager.LoadScene(levelIndex);
     }
 }
