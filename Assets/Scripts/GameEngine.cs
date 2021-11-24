@@ -15,6 +15,10 @@ public class GameEngine : MonoBehaviour
 
     public Text scoreLabel;
     public Text popupScoreLabel;
+    public Image badge1;
+    public Image badge2;
+    public Image badge3;
+    public Image badge4;
     public StaminaBar staminaBar;
     public PopupManager popup;
     private int score = 0;
@@ -29,7 +33,7 @@ public class GameEngine : MonoBehaviour
 
     private void Start()
     {
-        timer.InitWithValue(3);
+        timer.InitWithValue(60);
         BugEvents.onDeath += this.updateScore;
 
         audioSource = GetComponent<AudioSource>();
@@ -47,7 +51,7 @@ public class GameEngine : MonoBehaviour
                 PlayGameOverAudio();
                 timer.ToggleTimer();
                 gameState = GameState.FINISHED;
-                popup.ShowModal();
+                PrepareEndModal();
                 break;
             case GameState.WIN:
                 // TODO: - Display win overlay
@@ -59,6 +63,31 @@ public class GameEngine : MonoBehaviour
             case GameState.FINISHED:
                 break;
         }
+    }
+
+    private void PrepareEndModal()
+    {
+        if (score >= 20)
+        {
+            badge1.sprite = Resources.Load<Sprite>("Sprites/badge-mosquito");
+        }
+
+        if (score >= 100)
+        {
+            badge2.sprite = Resources.Load<Sprite>("Sprites/badge-lady-bug");
+        }
+
+        if (score >= 250)
+        {
+            badge3.sprite = Resources.Load<Sprite>("Sprites/badge-butterfly");
+        }
+
+        if (score >= 1000)
+        {
+            badge4.sprite = Resources.Load<Sprite>("Sprites/badge-dragonfly");
+        }
+
+        popup.ShowModal();
     }
 
     private void PlayGameAudio()
