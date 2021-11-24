@@ -45,6 +45,7 @@ public class GameEngine : MonoBehaviour
                 break;
             case GameState.PAUSE:
                 // TODO: - Display pause overlay
+                timer.ToggleTimer();
                 break;
             case GameState.FINISHED:
                 break;
