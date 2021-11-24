@@ -24,10 +24,15 @@ public class GameEngine : MonoBehaviour
     public TimerController timer;
     private GameState gameState = GameState.PLAY;
 
+    private AudioSource audioSource;
+
     private void Start()
     {
         timer.InitWithValue(3);
         BugEvents.onDeath += this.updateScore;
+
+        audioSource = GetComponent<AudioSource>();
+        PlayGameAudio();
     }
 
     private void FixedUpdate()
@@ -38,6 +43,7 @@ public class GameEngine : MonoBehaviour
                 PlayLoop();
                 break;
             case GameState.LOOSE:
+                PlayGameOverAudio();
                 timer.ToggleTimer();
                 gameState = GameState.FINISHED;
                 popup.ShowModal();
@@ -52,6 +58,24 @@ public class GameEngine : MonoBehaviour
             case GameState.FINISHED:
                 break;
         }
+    }
+
+    private void PlayGameAudio()
+    {
+        audioSource.volume = 0.5f;
+        audioSource.loop = true;
+        AudioClip audioClip = (AudioClip)Resources.Load("Audio/dominoespizzaakacatchme");
+        audioSource.clip = audioClip;
+        audioSource.Play();
+    }
+
+    private void PlayGameOverAudio()
+    {
+        audioSource.volume = 0.1f;
+        audioSource.loop = false;
+        AudioClip audioClip = (AudioClip)Resources.Load("Audio/game_over");
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 
     private void Update()
