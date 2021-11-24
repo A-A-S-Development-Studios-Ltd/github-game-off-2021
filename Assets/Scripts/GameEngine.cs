@@ -25,7 +25,7 @@ public class GameEngine : MonoBehaviour
 
     private void Start()
     {
-        timer.InitWithValue(5);
+        timer.InitWithValue(60);
         BugEvents.onDeath += this.updateScore;
     }
 
