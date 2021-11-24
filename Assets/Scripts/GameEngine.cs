@@ -14,6 +14,7 @@ public class GameEngine : MonoBehaviour
 {
 
     public Text scoreLabel;
+    public Text popupScoreLabel;
     public StaminaBar staminaBar;
     public PopupManager popup;
     private int score = 0;
@@ -106,6 +107,7 @@ public class GameEngine : MonoBehaviour
         {
             score += bug.score;
             scoreLabel.text = "Score: " + score;
+            popupScoreLabel.text = "" + score;
         }
     }
     

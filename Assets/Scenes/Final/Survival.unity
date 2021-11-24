@@ -234,6 +234,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1554520580817825192, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554520580817825198, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
+      propertyPath: m_Name
+      value: score
+      objectReference: {fileID: 0}
     - target: {fileID: 8591272973853176390, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -395,6 +403,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57291154b46cb487cbaf54c26c20ccbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &724125834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1554520580817825192, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
+  m_PrefabInstance: {fileID: 5244695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &805449054 stripped
@@ -1156,6 +1175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreLabel: {fileID: 805449054}
+  popupScoreLabel: {fileID: 724125834}
   staminaBar: {fileID: 606311372}
   popup: {fileID: 5244697}
   timer: {fileID: 907916316}
