@@ -62,7 +62,7 @@ public class Bug : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if(!gameEngine.IsExhausted()) {
+        if(!gameEngine.IsExhausted() && gameEngine.IsPlaying()) {
             gameEngine.staminaBar.UseStamina(-5);
             this.PlayDeathAnimation();
             Destroy(this.gameObject);

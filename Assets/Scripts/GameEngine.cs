@@ -25,7 +25,7 @@ public class GameEngine : MonoBehaviour
 
     private void Start()
     {
-        timer.InitWithValue(60);
+        timer.InitWithValue(5);
         BugEvents.onDeath += this.updateScore;
     }
 
@@ -106,6 +106,12 @@ public class GameEngine : MonoBehaviour
     {
         isExhausted = value;
     }
+    
+    public bool IsPlaying()
+    {
+        return gameState == GameState.PLAY;
+    }
+
 
     public void TriggerPause()
     {

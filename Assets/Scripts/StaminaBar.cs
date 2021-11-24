@@ -38,8 +38,12 @@ public class StaminaBar : MonoBehaviour
         StartCoroutine(coroutine);
     }
 
-    public void UseStamina(int amount)
+    public void UseStamina(int amount)    
     {
+        if(!gameEngine.IsPlaying()) 
+        {
+            return;
+        }
         if (gameEngine.IsExhausted())
         {
 

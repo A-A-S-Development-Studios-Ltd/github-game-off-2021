@@ -27,6 +27,7 @@ public class TimerController : MonoBehaviour
         {
             timerIsRunning = false;
             timeRemaining = 0;
+            Time.timeScale = 0;
         }
     }
 
