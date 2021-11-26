@@ -1309,6 +1309,10 @@ PrefabInstance:
       propertyPath: mainCanvas
       value: 
       objectReference: {fileID: 1542172250}
+    - target: {fileID: 5861207211536837160, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
+      propertyPath: shakeDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5861207211693670677, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

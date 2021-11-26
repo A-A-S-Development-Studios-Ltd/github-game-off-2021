@@ -106,7 +106,7 @@ public class StaminaBar : MonoBehaviour
                 yield return null;
 
             }
-            cameraTransform.position = startPosition + Random.insideUnitSphere;
+            cameraTransform.position = startPosition + (Random.insideUnitSphere / 3);
             yield return null;
         }
 
