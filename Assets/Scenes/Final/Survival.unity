@@ -934,9 +934,8 @@ MonoBehaviour:
   stinkBug: {fileID: 4897944514458233819, guid: 277436f1582783945a8b62849301f8a9, type: 3}
   bugList: []
   waveCount: 0
-  bugCount: 0
+  killCount: 0
   waveLabel: {fileID: 1017843843}
-  isInfiniteMode: 0
 --- !u!4 &1239740781
 Transform:
   m_ObjectHideFlags: 0
