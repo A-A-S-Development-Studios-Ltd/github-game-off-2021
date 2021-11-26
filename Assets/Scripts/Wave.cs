@@ -18,7 +18,7 @@ public class Wave
         bugList = new List<Bug>();
         this.bugRegistry = bugRegistry;
         this.waveCount = waveCount;
-        this.maxBugsOnScreen = 16;
+        this.maxBugsOnScreen = 24;
     }
     public async void StartWave()
     {
