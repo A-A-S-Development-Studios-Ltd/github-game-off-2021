@@ -19,9 +19,14 @@ public class Level1 : MonoBehaviour
     public int bugCount;
     public Text waveLabel;
     public bool isInfiniteMode;
+    
+    private GameEngine gameEngine;
+
     void Start()
     {
         bugList = new List<Bug> { ant, bee, beetle, goldLadyBug, fireAnt, ladyBug, stinkBug, ant, bee, beetle, fireAnt, ladyBug, stinkBug, ladyBug, ant, beetle, ladyBug, ant, beetle };
+
+        gameEngine = GameObject.FindWithTag("GameEngine").GetComponent<GameEngine>();
 
         WaveEvents.onComplete += this.OnWaveComplete;
         waveCount = 0;
@@ -69,7 +74,7 @@ public class Level1 : MonoBehaviour
     void StartNextWave()
     {
         waveCount++;
-        waveLabel.text = "Wave: " + waveCount;
+        gameEngine.updateWave(waveCount);
 
         currentWave = GetRamdomWave();
         currentWave.StartWave();

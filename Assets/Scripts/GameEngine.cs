@@ -21,6 +21,7 @@ public class GameEngine : MonoBehaviour
     public Image badge4;
     public StaminaBar staminaBar;
     public PopupManager popup;
+    public Text waveLabel;
     private int score = 0;
     private int missStaminaCost = 10;
 
@@ -33,7 +34,7 @@ public class GameEngine : MonoBehaviour
 
     private void Start()
     {
-        timer.InitWithValue(60);
+        timer.InitWithValue(6);
         BugEvents.onDeath += this.updateScore;
 
         audioSource = GetComponent<AudioSource>();
@@ -133,12 +134,26 @@ public class GameEngine : MonoBehaviour
     public void updateScore(Bug bug)
     {
         if (scoreLabel != null)
-        {
+        {   
+            Debug.Log("Updating Score...");
             score += bug.score;
             scoreLabel.text = "Score: " + score;
             popupScoreLabel.text = "" + score;
+        } else {
+            Debug.Log("Missing Score Label");
         }
     }
+ 
+    public void updateWave(int waveCount)
+    {
+        if (waveLabel != null)
+        {   
+            Debug.Log("Updating Wave...");
+            waveLabel.text = "Wave: " + waveCount;
+        } else {
+            Debug.Log("Missing Wave Label");
+        }
+    }   
     
     public void updateTime(int newtime)
     {

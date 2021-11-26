@@ -234,30 +234,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1554520580817825192, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
-      propertyPath: m_Text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1554520580817825198, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
-      propertyPath: m_Name
-      value: score
-      objectReference: {fileID: 0}
-    - target: {fileID: 1554520580817825199, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -10.175
-      objectReference: {fileID: 0}
-    - target: {fileID: 1554520580817825199, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -63
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591272973530018896, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -10.175
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591272973530018896, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 104
-      objectReference: {fileID: 0}
     - target: {fileID: 8591272973853176390, guid: f39bfe131f50a4926a435a0db9ad6c42, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1502,6 +1478,7 @@ MonoBehaviour:
   badge4: {fileID: 1904051722}
   staminaBar: {fileID: 606311372}
   popup: {fileID: 5244697}
+  waveLabel: {fileID: 1017843843}
   timer: {fileID: 907916316}
 --- !u!4 &1960745705
 Transform:
