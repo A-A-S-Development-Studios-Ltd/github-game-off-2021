@@ -18,7 +18,8 @@ public class GameEngine : MonoBehaviour
     public Image badge1;
     public Image badge2;
     public Image badge3;
-    public Image badge4;
+    public Image badge4;    
+    public Image badge5;
     public StaminaBar staminaBar;
     public PopupManager popup;
     public Text waveLabel;
@@ -71,22 +72,27 @@ public class GameEngine : MonoBehaviour
     {
         if (score >= 150)
         {
-            badge1.sprite = Resources.Load<Sprite>("Sprites/badge-mosquito");
+            badge1.sprite = Resources.Load<Sprite>("Sprites/star-gold");
         }
 
         if (score >= 500)
         {
-            badge2.sprite = Resources.Load<Sprite>("Sprites/badge-lady-bug");
+            badge2.sprite = Resources.Load<Sprite>("Sprites/star-gold");
         }
 
         if (score >= 1000)
         {
-            badge3.sprite = Resources.Load<Sprite>("Sprites/badge-butterfly");
+            badge3.sprite = Resources.Load<Sprite>("Sprites/star-gold");
         }
 
         if (score >= 5000)
         {
-            badge4.sprite = Resources.Load<Sprite>("Sprites/badge-dragonfly");
+            badge4.sprite = Resources.Load<Sprite>("Sprites/star-gold");
+        }
+
+        if (score >= 9000)
+        {
+            badge5.sprite = Resources.Load<Sprite>("Sprites/star-gold");
         }
 
         popup.ShowModal();
