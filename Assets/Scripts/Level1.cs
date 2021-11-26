@@ -15,10 +15,8 @@ public class Level1 : MonoBehaviour
     public List<Bug> bugList;
     public Wave currentWave;
     public int waveCount;
-    public int bugCount;
+    public int killCount;
     public Text waveLabel;
-    public bool isInfiniteMode;
-
     private GameEngine gameEngine;
 
     void Start()
@@ -27,13 +25,13 @@ public class Level1 : MonoBehaviour
         gameEngine = GameObject.FindWithTag("GameEngine").GetComponent<GameEngine>();
         WaveEvents.onComplete += this.OnWaveComplete;
         waveCount = 0;
-        bugCount = 0;
+        killCount = 0;
         BugEvents.onDeath += OnSquish;
         StartNextWave();
     }
     public void OnSquish(Bug bug)
     {
-        bugCount--;
+        killCount++;
     }
 
     void StartNextWave()

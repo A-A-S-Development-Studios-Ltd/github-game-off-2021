@@ -10,6 +10,7 @@ public class Wave
     List<Bug> bugList;
     int waveCount;
     GameEngine gameEngine;
+    private int maxBugsOnScreen;
     public Wave(List<(Bug, int)> bugRegistry, int waveCount, GameEngine gameEngine)
     {
         this.gameEngine = gameEngine;
@@ -17,6 +18,7 @@ public class Wave
         bugList = new List<Bug>();
         this.bugRegistry = bugRegistry;
         this.waveCount = waveCount;
+        this.maxBugsOnScreen = 16;
     }
     public async void StartWave()
     {
@@ -38,7 +40,7 @@ public class Wave
             delay = 1500;
         }
         await Task.Delay(spawnRate * delay);
-        while (!gameEngine.IsPlaying())
+        while (!gameEngine.IsPlaying() || maxBugsOnScreen < bugList.Count)
         {
             await Task.Delay(1000);
         }
