@@ -149,8 +149,9 @@ public class GameEngine : MonoBehaviour
 
     public void updateScore(Bug bug)
     {
-        if (scoreLabel != null)
+        if (scoreLabel != null && popupScoreLabel != null)
         {
+
             score += bug.score;
             scoreLabel.text = "Score: " + score;
             popupScoreLabel.text = "" + score;
