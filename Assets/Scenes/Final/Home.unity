@@ -1118,6 +1118,39 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PopupManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7385387439178696040, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 93.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385387439178696040, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 18.895
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385387439178696043, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_Text
+      value: '<a href="https://www.vecteezy.com/free-vector/ornament">Tree: Ornament
+        Vectors (Vecteezy)</a>
+
+        <a href="http://www.freepik.com">Grass: designed
+        by Freepik</a>
+
+        <a href="http://www.freepik.com">Island: Designed
+        by brgfx (Freepik)</a>
+
+
+
+
+
+
+        <a href="https://opengameart.org/content/forest">Forest
+        by Syncopika (OpenGameArt)</a>
+
+        <a href="https://opengameart.org/content/catch-me-if-you-can">Catch
+        me if you can by Poinl (Open Game Art)</a>
+
+        <a href="https://opengameart.org/content/game-over-6">Game
+        over by Adn_adn (Open Game Art)</a>'
+      objectReference: {fileID: 0}
     - target: {fileID: 7385387440062225688, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
       propertyPath: m_Name
       value: credit_popup
@@ -1213,6 +1246,14 @@ PrefabInstance:
     - target: {fileID: 7385387440062225691, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385387440851278306, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -223.4805
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385387440851278306, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 58
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
