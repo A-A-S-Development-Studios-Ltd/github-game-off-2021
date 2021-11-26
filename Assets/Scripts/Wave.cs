@@ -9,8 +9,10 @@ public class Wave
     public List<(Bug, int)> bugRegistry;
     List<Bug> bugList;
     int waveCount;
-    public Wave(List<(Bug, int)> bugRegistry, int waveCount)
+    GameEngine gameEngine;
+    public Wave(List<(Bug, int)> bugRegistry, int waveCount, GameEngine gameEngine)
     {
+        this.gameEngine = gameEngine;
         BugEvents.onDeath += this.bugDead;
         bugList = new List<Bug>();
         this.bugRegistry = bugRegistry;
@@ -36,6 +38,10 @@ public class Wave
             delay = 1500;
         }
         await Task.Delay(spawnRate * delay);
+        while (!gameEngine.IsPlaying())
+        {
+            await Task.Delay(1000);
+        }
         return BugGenerator.generate(bug: bug, count: count);
     }
     public void bugDead(Bug bug)

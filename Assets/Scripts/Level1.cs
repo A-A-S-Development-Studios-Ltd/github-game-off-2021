@@ -94,6 +94,7 @@ public class Level1 : MonoBehaviour
                 bugs.Add((bug, count));
             }
         }
-        return new Wave(bugs, waveCount);
+        return new Wave(bugs, waveCount, gameEngine);
+
     }
 }
