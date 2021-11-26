@@ -26,6 +26,7 @@ TagManager:
   - ScrollFill
   - GameEngine
   - WaveCount
+  - Pause
   layers:
   - Default
   - TransparentFX

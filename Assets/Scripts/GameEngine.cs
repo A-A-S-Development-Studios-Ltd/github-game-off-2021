@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 enum GameState
 {
@@ -18,7 +19,7 @@ public class GameEngine : MonoBehaviour
     public Image badge1;
     public Image badge2;
     public Image badge3;
-    public Image badge4;    
+    public Image badge4;
     public Image badge5;
     public StaminaBar staminaBar;
     public PopupManager popup;
@@ -41,7 +42,10 @@ public class GameEngine : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         PlayGameAudio();
     }
-
+    void OnApplicationQuit()
+    {
+        gameState = GameState.FINISHED;
+    }
     private void FixedUpdate()
     {
         switch (gameState)
@@ -126,7 +130,6 @@ public class GameEngine : MonoBehaviour
                 return;
             }
 
-            staminaBar.UseStamina(missStaminaCost);
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -135,6 +138,12 @@ public class GameEngine : MonoBehaviour
             Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
             RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
 
+            if (hit.transform != null && hit.transform.gameObject.tag == "Pause")
+            {
+                return;
+
+            }
+            staminaBar.UseStamina(missStaminaCost);
         }
     }
 

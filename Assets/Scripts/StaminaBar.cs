@@ -38,9 +38,9 @@ public class StaminaBar : MonoBehaviour
         StartCoroutine(coroutine);
     }
 
-    public void UseStamina(int amount)    
+    public void UseStamina(int amount)
     {
-        if(!gameEngine.IsPlaying()) 
+        if (!gameEngine.IsPlaying())
         {
             return;
         }
@@ -72,15 +72,15 @@ public class StaminaBar : MonoBehaviour
     {
         while (true)
         {
-            if(gameEngine.IsExhausted())
+            if (gameEngine.IsExhausted())
             {
                 yield return new WaitForSeconds(0.06f);
-            } 
-            else 
+            }
+            else
             {
                 yield return new WaitForSeconds(0.1f);
             }
-            
+
             currentStamina = Mathf.Max(currentStamina - 1, 0);
 
             if (currentStamina == 30)
@@ -93,14 +93,19 @@ public class StaminaBar : MonoBehaviour
 
     IEnumerator ShakeCamera()
     {
+
         isShaking = true;
         Transform cameraTransform = uiBar.transform;
         Vector3 startPosition = cameraTransform.position;
         float elapsedTime = 0f;
-
         while (elapsedTime < shakeDuration)
         {
             elapsedTime += Time.deltaTime;
+            if (!gameEngine.IsPlaying())
+            {
+                yield return null;
+
+            }
             cameraTransform.position = startPosition + Random.insideUnitSphere;
             yield return null;
         }

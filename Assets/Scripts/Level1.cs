@@ -26,7 +26,7 @@ public class Level1 : MonoBehaviour
         bugList = new List<Bug> { ant, bee, beetle, goldLadyBug, fireAnt, ladyBug, stinkBug, ant, bee, beetle, fireAnt, ladyBug, stinkBug, ladyBug, ant, beetle, ladyBug, ant, beetle };
         gameEngine = GameObject.FindWithTag("GameEngine").GetComponent<GameEngine>();
         WaveEvents.onComplete += this.OnWaveComplete;
-        waveCount = 0;
+        waveCount = 10;
         bugCount = 0;
         BugEvents.onDeath += OnSquish;
         StartNextWave();
@@ -90,7 +90,7 @@ public class Level1 : MonoBehaviour
             for (var i = 10; i < waveCount; i++)
             {
                 Bug bug = bugList[Random.Range(0, bugCount)];
-                int count = Random.Range(1, 3);
+                int count = Random.Range(1, 1);
                 bugs.Add((bug, count));
             }
         }
