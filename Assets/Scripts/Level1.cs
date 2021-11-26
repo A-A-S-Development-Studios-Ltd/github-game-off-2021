@@ -19,10 +19,13 @@ public class Level1 : MonoBehaviour
     public int bugCount;
     public Text waveLabel;
     public bool isInfiniteMode;
+    private int[] speedGears;
+    private float speedIncreaseInterval;
     void Start()
     {
         bugList = new List<Bug> { ant, bee, beetle, goldLadyBug, fireAnt, ladyBug, stinkBug, ant, bee, beetle, fireAnt, ladyBug, stinkBug, ladyBug, ant, beetle, ladyBug, ant, beetle };
-
+        speedGears = new int[] { 3, 2, 1 };
+        speedIncreaseInterval = 0.01f;
         WaveEvents.onComplete += this.OnWaveComplete;
         waveCount = 0;
         bugCount = 0;
@@ -82,56 +85,48 @@ public class Level1 : MonoBehaviour
     }
     Wave GetRamdomWave()
     {
+        var bugs = new List<(Bug, int)>();
+        var bugCount = bugList.Count - 1;
         var max = waveCount;
-        if(max <= 2) {
+        if (max <= 2)
+        {
             max = 6;
         }
         if (max > 3)
         {
             max = waveCount % 3;
         }
-        Dictionary<Bug, int> bugs = new Dictionary<Bug, int>();
         if (waveCount > 0)
         {
-            bugs.Add(ladyBug, Random.Range(4, max+3));
+            bugs.Add((ladyBug, Random.Range(4, max + 3)));
         }
         if (waveCount > 3)
         {
-            bugs.Add(ant, Random.Range(3, max+6));
-            bugs.Add(bee, Random.Range(1, max));
+            bugs.Add((ant, Random.Range(3, max + 6)));
+            bugs.Add((bee, Random.Range(1, max)));
         }
         if (waveCount > 6)
         {
-            bugs.Add(goldLadyBug, 2);
-            bugs.Add(beetle, Random.Range(3, max+6));
+            bugs.Add((goldLadyBug, 2));
+            bugs.Add((beetle, Random.Range(3, max + 6)));
         }
         if (waveCount > 8)
         {
-            bugs.Add(fireAnt, Random.Range(3, max));
+            bugs.Add((fireAnt, Random.Range(3, max)));
         }
         if (waveCount > 10)
         {
-            bugs.Add(stinkBug, Random.Range(3, max));
+            bugs.Add((stinkBug, Random.Range(3, max)));
         }
         if (waveCount > 10)
         {
-            Bug bug = bugList[Random.Range(0, bugList.Count - 1)];
-            int count = Random.Range(3, 9);
-            bugs[bug] = bugs[bug] + count;
+            for (var i = 10; i < waveCount; i++)
+            {
+                Bug bug = bugList[Random.Range(0, bugCount)];
+                int count = Random.Range(1, 3);
+                bugs.Add((bug, count));
+            }
         }
-        if (waveCount > 14)
-        {
-            Bug bug = bugList[Random.Range(0, bugList.Count - 1)];
-            int count = Random.Range(5, 12);
-            bugs[bug] = bugs[bug] + count;
-        }
-        if (waveCount > 20)
-        {
-            Bug bug = bugList[Random.Range(0, bugList.Count - 1)];
-            int count = Random.Range(6, 18);
-            bugs[bug] = bugs[bug] + count;
-        }
-        //return gameObject.AddComponent<Wave>();
         return new Wave(bugs, waveCount);
     }
 }
