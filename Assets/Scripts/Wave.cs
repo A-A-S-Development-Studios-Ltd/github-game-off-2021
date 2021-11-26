@@ -6,32 +6,36 @@ using System.Threading;
 using System.Threading.Tasks;
 public class Wave
 {
-    public Dictionary<Bug, int> bugRegistry;
+    public List<(Bug, int)> bugRegistry;
     List<Bug> bugList;
-    int spawnRate;
     int waveCount;
-    public Wave(Dictionary<Bug, int> bugRegistry, int waveCount)
+    public Wave(List<(Bug, int)> bugRegistry, int waveCount)
     {
         BugEvents.onDeath += this.bugDead;
         bugList = new List<Bug>();
         this.bugRegistry = bugRegistry;
-        this.spawnRate = 0;
         this.waveCount = waveCount;
     }
     public async void StartWave()
     {
-        foreach (KeyValuePair<Bug, int> item in bugRegistry)
+        foreach ((Bug, int) item in bugRegistry)
         {
-            spawnRate = Random.Range(0, 3);
-            bugList.AddRange(await generateBugs(item.Key, item.Value));
+            bugList.AddRange(await generateBugs(item.Item1, item.Item2));
         }
     }
     public async Task<List<Bug>> generateBugs(Bug bug, int count)
     {
-        if (bugList.Count > 3)
+        var spawnRate = Random.Range(0, 3);
+        var delay = 0;
+        if (bugList.Count > 3 && bugList.Count < 10)
         {
-            await Task.Delay(spawnRate * 1000);
+            delay = 1000;
         }
+        if (waveCount > 10)
+        {
+            delay = 1500;
+        }
+        await Task.Delay(spawnRate * delay);
         return BugGenerator.generate(bug: bug, count: count);
     }
     public void bugDead(Bug bug)
@@ -42,7 +46,7 @@ public class Wave
             WaveEvents.WaveComplete(this);
             BugEvents.onDeath -= this.bugDead;
         }
-        else if (bugList.Count == 0) 
+        else if (bugList.Count == 0)
         {
             WaveEvents.WaveComplete(this);
             BugEvents.onDeath -= this.bugDead;
