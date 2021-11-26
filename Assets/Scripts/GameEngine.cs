@@ -34,7 +34,7 @@ public class GameEngine : MonoBehaviour
 
     private void Start()
     {
-        timer.InitWithValue(6);
+        timer.InitWithValue(60);
         BugEvents.onDeath += this.updateScore;
 
         audioSource = GetComponent<AudioSource>();
@@ -66,24 +66,25 @@ public class GameEngine : MonoBehaviour
         }
     }
 
+
     private void PrepareEndModal()
     {
-        if (score >= 20)
+        if (score >= 150)
         {
             badge1.sprite = Resources.Load<Sprite>("Sprites/badge-mosquito");
         }
 
-        if (score >= 100)
+        if (score >= 500)
         {
             badge2.sprite = Resources.Load<Sprite>("Sprites/badge-lady-bug");
         }
 
-        if (score >= 250)
+        if (score >= 1000)
         {
             badge3.sprite = Resources.Load<Sprite>("Sprites/badge-butterfly");
         }
 
-        if (score >= 1000)
+        if (score >= 5000)
         {
             badge4.sprite = Resources.Load<Sprite>("Sprites/badge-dragonfly");
         }
@@ -127,34 +128,28 @@ public class GameEngine : MonoBehaviour
             Vector3 touchPosWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
             RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
-            
+
         }
     }
 
     public void updateScore(Bug bug)
     {
         if (scoreLabel != null)
-        {   
-            Debug.Log("Updating Score...");
+        {
             score += bug.score;
             scoreLabel.text = "Score: " + score;
             popupScoreLabel.text = "" + score;
-        } else {
-            Debug.Log("Missing Score Label");
         }
     }
- 
+
     public void updateWave(int waveCount)
     {
         if (waveLabel != null)
-        {   
-            Debug.Log("Updating Wave...");
+        {
             waveLabel.text = "Wave: " + waveCount;
-        } else {
-            Debug.Log("Missing Wave Label");
         }
-    }   
-    
+    }
+
     public void updateTime(int newtime)
     {
         timer.IncreaseTime(newtime);
@@ -179,12 +174,15 @@ public class GameEngine : MonoBehaviour
     {
         isExhausted = value;
     }
-    
+
     public bool IsPlaying()
     {
         return gameState == GameState.PLAY;
     }
-
+    public bool IsFinished()
+    {
+        return gameState == GameState.FINISHED;
+    }
 
     public void TriggerPause()
     {

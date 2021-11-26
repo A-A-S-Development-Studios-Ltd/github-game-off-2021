@@ -18,7 +18,7 @@ public class Level1 : MonoBehaviour
     public int bugCount;
     public Text waveLabel;
     public bool isInfiniteMode;
-    
+
     private GameEngine gameEngine;
 
     void Start()
@@ -38,9 +38,13 @@ public class Level1 : MonoBehaviour
 
     void StartNextWave()
     {
+        if (gameEngine.IsFinished())
+        {
+            currentWave = null;
+            return;
+        }
         waveCount++;
         gameEngine.updateWave(waveCount);
-
         currentWave = GetRamdomWave();
         currentWave.StartWave();
     }

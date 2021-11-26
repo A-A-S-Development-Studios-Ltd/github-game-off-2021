@@ -17,25 +17,23 @@ public class ClickPowerUp : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {        
+    {
         gameEngine = GameObject.FindWithTag("GameEngine").GetComponent<GameEngine>();
         targetPosition = GameMapper.Instance.GetSpawnPosition();
-        //targetPosition = GameObject.FindGameObjectsWithTag((string)powerUpSlots[gameObject.tag])[0].transform.position;        
     }
 
     void FixedUpdate()
     {
         gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, targetPosition, 3 * Time.deltaTime);
 
-        if(Vector2.Distance(gameObject.transform.position, targetPosition) < 0.3f) {
-            //Debug.Log("Destroyed PowerUp");
+        if (Vector2.Distance(gameObject.transform.position, targetPosition) < 0.3f)
+        {
             Destroy(gameObject);
         }
     }
 
     private void OnMouseDown()
     {
-        //Debug.Log("Clicked PowerUp");
         gameEngine.staminaBar.UseStamina(-8);
         TimerEvents.TimerUpdate(10);
         Destroy(gameObject);
