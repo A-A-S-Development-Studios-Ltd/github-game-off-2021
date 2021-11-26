@@ -24,12 +24,7 @@ public class Level1 : MonoBehaviour
     void Start()
     {
         bugList = new List<Bug> { ant, bee, beetle, goldLadyBug, fireAnt, ladyBug, stinkBug, ant, bee, beetle, fireAnt, ladyBug, stinkBug, ladyBug, ant, beetle, ladyBug, ant, beetle };
-
         gameEngine = GameObject.FindWithTag("GameEngine").GetComponent<GameEngine>();
-
-    void Start()
-    {
-        bugList = new List<Bug> { ant, bee, beetle, goldLadyBug, fireAnt, ladyBug, stinkBug, ant, bee, beetle, fireAnt, ladyBug, stinkBug, ladyBug, ant, beetle, ladyBug, ant, beetle };
         WaveEvents.onComplete += this.OnWaveComplete;
         waveCount = 0;
         bugCount = 0;
