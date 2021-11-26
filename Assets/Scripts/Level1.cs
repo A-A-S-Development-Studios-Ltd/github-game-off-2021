@@ -13,7 +13,6 @@ public class Level1 : MonoBehaviour
     public LadyBug ladyBug;
     public StinkBug stinkBug;
     public List<Bug> bugList;
-
     public Wave currentWave;
     public int waveCount;
     public int bugCount;
@@ -25,7 +24,6 @@ public class Level1 : MonoBehaviour
         waveCount = 0;
         bugCount = 0;
         BugEvents.onDeath += OnSquish;
-        //change infinite mode to change between modes
         StartNextWave();
     }
     public void OnSquish(Bug bug)
@@ -37,7 +35,6 @@ public class Level1 : MonoBehaviour
     {
         waveCount++;
         waveLabel.text = "Wave: " + waveCount;
-
         currentWave = GetRamdomWave();
         currentWave.StartWave();
     }
