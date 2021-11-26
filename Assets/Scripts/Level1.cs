@@ -87,11 +87,7 @@ public class Level1 : MonoBehaviour
     {
         var bugs = new List<(Bug, int)>();
         var bugCount = bugList.Count - 1;
-        var max = waveCount;
-        if (max <= 2)
-        {
-            max = 6;
-        }
+        var max = 0;
         if (max > 3)
         {
             max = waveCount % 3;
