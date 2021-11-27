@@ -129,20 +129,12 @@ public class GameEngine : MonoBehaviour
                 staminaBar.UseStamina(0);
                 return;
             }
-
-
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Physics.Raycast(ray, out hit, 100.0f);
             Vector3 touchPosWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
             RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
-
-            if (hit.transform != null && hit.transform.gameObject.tag == "Pause")
-            {
-                return;
-
-            }
             staminaBar.UseStamina(missStaminaCost);
         }
     }

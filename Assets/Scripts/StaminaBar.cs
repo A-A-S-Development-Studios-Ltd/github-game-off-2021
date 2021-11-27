@@ -93,23 +93,16 @@ public class StaminaBar : MonoBehaviour
 
     IEnumerator ShakeCamera()
     {
-
         isShaking = true;
         Transform cameraTransform = uiBar.transform;
         Vector3 startPosition = cameraTransform.position;
         float elapsedTime = 0f;
-        while (elapsedTime < shakeDuration)
+        while (elapsedTime < shakeDuration && gameEngine.IsPlaying())
         {
             elapsedTime += Time.deltaTime;
-            if (!gameEngine.IsPlaying())
-            {
-                yield return null;
-
-            }
             cameraTransform.position = startPosition + (Random.insideUnitSphere / 3);
             yield return null;
         }
-
         cameraTransform.position = startPosition;
         isShaking = false;
     }
