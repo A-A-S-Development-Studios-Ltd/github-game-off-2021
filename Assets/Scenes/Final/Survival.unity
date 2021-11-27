@@ -1338,7 +1338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5861207211693670679, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5861207212166345217, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
       propertyPath: m_Pivot.x
@@ -1559,7 +1559,7 @@ MonoBehaviour:
   badge2: {fileID: 234631325}
   badge3: {fileID: 732775521}
   badge4: {fileID: 1904051722}
-  badge5: {fileID: 0}
+  badge5: {fileID: 419886457}
   staminaBar: {fileID: 606311372}
   popup: {fileID: 5244697}
   waveLabel: {fileID: 1017843843}
