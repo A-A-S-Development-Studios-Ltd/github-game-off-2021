@@ -1119,26 +1119,34 @@ PrefabInstance:
       value: PopupManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7385387439178696040, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 451.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385387439178696040, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 409.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385387439178696040, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 93.045
+      value: 73.92003
       objectReference: {fileID: 0}
     - target: {fileID: 7385387439178696040, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 18.895
+      value: -28.736015
       objectReference: {fileID: 0}
     - target: {fileID: 7385387439178696043, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
       propertyPath: m_Text
-      value: '<a href="https://www.vecteezy.com/free-vector/ornament">Tree: Ornament
-        Vectors (Vecteezy)</a>
-
-        <a href="http://www.freepik.com">Grass: designed
-        by Freepik</a>
-
-        <a href="http://www.freepik.com">Island: Designed
-        by brgfx (Freepik)</a>
+      value: 'numerous6, Aaron Fehr, SebastienFCT
 
 
+        <a href="https://www.vecteezy.com/free-vector/ornament">Tree:
+        Ornament Vectors (Vecteezy)</a>
 
+        <a href="http://www.freepik.com">Grass:
+        designed by Freepik</a>
+
+        <a href="http://www.freepik.com">Island:
+        Designed by brgfx (Freepik)</a>
 
 
 
@@ -1248,12 +1256,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7385387440851278306, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 111.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385387440851278306, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 330.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385387440851278306, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -223.4805
+      value: -230
       objectReference: {fileID: 0}
     - target: {fileID: 7385387440851278306, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 58
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385387440851278309, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}
+      propertyPath: m_Text
+      value: 'Developers:
+
+
+        Arts:
+
+
+
+
+
+        Music:
+
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d078bc56f2bd4c8ba2abc25d55827e2, type: 3}

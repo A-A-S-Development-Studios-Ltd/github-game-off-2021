@@ -36,7 +36,7 @@ public class GameEngine : MonoBehaviour
 
     private void Start()
     {
-        timer.InitWithValue(60);
+        timer.InitWithValue(3);
         BugEvents.onDeath += this.updateScore;
 
         audioSource = GetComponent<AudioSource>();

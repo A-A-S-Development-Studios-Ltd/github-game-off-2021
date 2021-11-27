@@ -10,6 +10,11 @@ public class LevelLoader : MonoBehaviour
 
     public float transitionTime = 1f;
 
+    public void LoadHomeScreen()
+    {
+        StartCoroutine(LoadLevel(0));
+    }
+
     public void LoadSurvival()
     {
         StartCoroutine(LoadLevel(1));
