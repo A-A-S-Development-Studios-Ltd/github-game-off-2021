@@ -26,7 +26,9 @@ public class Wave
     {
         foreach ((Bug, int) item in bugRegistry)
         {
-            bugList.AddRange(await generateBugs(item.Item1, item.Item2));
+            // TODO: - Delay is buggy on web builds.
+            //bugList.AddRange(await generateBugs(item.Item1, item.Item2));
+            bugList.AddRange(BugGenerator.generate(bug: item.Item1, count: item.Item2));
             groupCount++;
         }
     }
