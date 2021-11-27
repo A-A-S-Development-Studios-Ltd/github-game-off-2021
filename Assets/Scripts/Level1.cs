@@ -85,7 +85,8 @@ public class Level1 : MonoBehaviour
         }
         if (waveCount > 10)
         {
-            for (var i = 10; i < waveCount; i++)
+            int maxCount = (waveCount > 20) ? waveCount : 20;
+            for (var i = 10; i < maxCount; i++)
             {
                 Bug bug = bugList[Random.Range(0, bugCount)];
                 int count = Random.Range(1, 1);

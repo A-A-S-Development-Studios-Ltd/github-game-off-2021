@@ -11,6 +11,7 @@ public class Wave
     int waveCount;
     GameEngine gameEngine;
     private int maxBugsOnScreen;
+    private int groupCount;
     public Wave(List<(Bug, int)> bugRegistry, int waveCount, GameEngine gameEngine)
     {
         this.gameEngine = gameEngine;
@@ -19,12 +20,14 @@ public class Wave
         this.bugRegistry = bugRegistry;
         this.waveCount = waveCount;
         this.maxBugsOnScreen = 24;
+        this.groupCount = 0;
     }
     public async void StartWave()
     {
         foreach ((Bug, int) item in bugRegistry)
         {
             bugList.AddRange(await generateBugs(item.Item1, item.Item2));
+            groupCount++;
         }
     }
     public async Task<List<Bug>> generateBugs(Bug bug, int count)
@@ -49,12 +52,13 @@ public class Wave
     public void bugDead(Bug bug)
     {
         bugList.Remove(bug);
-        if (bugList.Count <= 2 && waveCount > 2)
+
+        if (bugList.Count <= 2 && waveCount > 2 && groupCount == bugRegistry.Count)
         {
             WaveEvents.WaveComplete(this);
             BugEvents.onDeath -= this.bugDead;
         }
-        else if (bugList.Count == 0)
+        else if (bugList.Count == 0 && groupCount == bugRegistry.Count)
         {
             WaveEvents.WaveComplete(this);
             BugEvents.onDeath -= this.bugDead;
