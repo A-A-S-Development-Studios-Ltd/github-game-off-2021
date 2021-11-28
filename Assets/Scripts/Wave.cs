@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using System.Threading;
 using System.Threading.Tasks;
 public class Wave
 {
@@ -12,6 +9,7 @@ public class Wave
     GameEngine gameEngine;
     private int maxBugsOnScreen;
     private int groupCount;
+
     public Wave(List<(Bug, int)> bugRegistry, int waveCount, GameEngine gameEngine)
     {
         this.gameEngine = gameEngine;
@@ -22,6 +20,7 @@ public class Wave
         this.maxBugsOnScreen = 24;
         this.groupCount = 0;
     }
+
     public void StartWave()
     {
         foreach ((Bug, int) item in bugRegistry)
@@ -32,6 +31,7 @@ public class Wave
             groupCount++;
         }
     }
+
     public async Task<List<Bug>> generateBugs(Bug bug, int count)
     {
         var spawnRate = Random.Range(0, 3);
@@ -51,6 +51,7 @@ public class Wave
         }
         return BugGenerator.generate(bug: bug, count: count);
     }
+
     public void bugDead(Bug bug)
     {
         bugList.Remove(bug);

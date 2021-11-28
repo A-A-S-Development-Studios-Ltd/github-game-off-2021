@@ -34,7 +34,7 @@ public class Level1 : MonoBehaviour
         BugEvents.onDeath += this.bugDead;
         bugList = new List<Bug> { ant, bee, beetle, goldLadyBug, fireAnt, ladyBug, stinkBug, ant, bee, beetle, fireAnt, ladyBug, stinkBug, ladyBug, ant, beetle, ladyBug, ant, beetle };
         gameEngine = GameObject.FindWithTag("GameEngine").GetComponent<GameEngine>();
-        waveCount = 20;
+        waveCount = 0;
         killCount = 0;
         bugCount = 0;
         bugLimit = 20;

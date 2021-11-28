@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 enum GameState
 {
@@ -42,10 +41,12 @@ public class GameEngine : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         PlayGameAudio();
     }
+
     void OnApplicationQuit()
     {
         gameState = GameState.FINISHED;
     }
+
     private void FixedUpdate()
     {
         switch (gameState)
@@ -187,6 +188,7 @@ public class GameEngine : MonoBehaviour
     {
         return gameState == GameState.PLAY;
     }
+
     public bool IsFinished()
     {
         return gameState == GameState.FINISHED;
