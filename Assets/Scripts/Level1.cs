@@ -18,6 +18,7 @@ public class Level1 : MonoBehaviour
     public int waveCount;
     public int killCount;
     public int bugCount;
+    public int bugLimit;
     public Text waveLabel;
     private GameEngine gameEngine;
 
@@ -36,6 +37,7 @@ public class Level1 : MonoBehaviour
         waveCount = 20;
         killCount = 0;
         bugCount = 0;
+        bugLimit = 20;
         BugEvents.onDeath += OnSquish;
         GenerateWave();
     }
@@ -115,6 +117,10 @@ public class Level1 : MonoBehaviour
     }
     IEnumerator spawnBugs(List<(Bug, int)> bugs)
     {
+        while (levelBugList.Count > bugLimit)
+        {
+            yield return new WaitForSeconds(1f);
+        }
         foreach ((Bug, int) item in bugs)
         {
             yield return new WaitForSeconds(2f);
