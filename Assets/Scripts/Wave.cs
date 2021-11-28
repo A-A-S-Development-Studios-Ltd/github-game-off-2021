@@ -22,7 +22,7 @@ public class Wave
         this.maxBugsOnScreen = 24;
         this.groupCount = 0;
     }
-    public async void StartWave()
+    public void StartWave()
     {
         foreach ((Bug, int) item in bugRegistry)
         {

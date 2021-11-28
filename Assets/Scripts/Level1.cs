@@ -14,7 +14,7 @@ public class Level1 : MonoBehaviour
     private StinkBug stinkBug;
 
     public List<Bug> bugList;
-    public Wave currentWave;
+    public List<Bug> levelBugList;
     public int waveCount;
     public int killCount;
     public Text waveLabel;
@@ -29,40 +29,27 @@ public class Level1 : MonoBehaviour
         fireAnt = Resources.Load<FireAnt>("Prefabs/FireAnt");
         goldLadyBug = Resources.Load<GoldLadyBug>("Prefabs/GoldBug 1");
         stinkBug = Resources.Load<StinkBug>("Prefabs/StinkBug");
-
+        BugEvents.onDeath += this.bugDead;
         bugList = new List<Bug> { ant, bee, beetle, goldLadyBug, fireAnt, ladyBug, stinkBug, ant, bee, beetle, fireAnt, ladyBug, stinkBug, ladyBug, ant, beetle, ladyBug, ant, beetle };
         gameEngine = GameObject.FindWithTag("GameEngine").GetComponent<GameEngine>();
-        WaveEvents.onComplete += this.OnWaveComplete;
         waveCount = 0;
         killCount = 0;
         BugEvents.onDeath += OnSquish;
-        StartNextWave();
+        GenerateWave();
     }
     public void OnSquish(Bug bug)
     {
         killCount++;
     }
-
-    void StartNextWave()
+    void GenerateWave()
     {
         if (gameEngine.IsFinished())
         {
-            currentWave = null;
             return;
         }
         waveCount++;
         gameEngine.updateWave(waveCount);
-        currentWave = GetRamdomWave();
-        currentWave.StartWave();
-    }
-    void OnWaveComplete(Wave wave)
-    {
-        wave = null;
-        currentWave = null;
-        StartNextWave();
-    }
-    Wave GetRamdomWave()
-    {
+
         var bugs = new List<(Bug, int)>();
         var bugCount = bugList.Count - 1;
         var max = 0;
@@ -112,7 +99,23 @@ public class Level1 : MonoBehaviour
                 bugs.Add((bug, count));
             }
         }
-        return new Wave(bugs, waveCount, gameEngine);
 
+        foreach ((Bug, int) item in bugs)
+        {
+            levelBugList.AddRange(BugGenerator.generate(bug: item.Item1, count: item.Item2));
+        }
+    }
+    public void bugDead(Bug bug)
+    {
+        levelBugList.Remove(bug);
+
+        if (levelBugList.Count <= 2 && waveCount > 2)
+        {
+            GenerateWave();
+        }
+        else if (levelBugList.Count == 0)
+        {
+            GenerateWave();
+        }
     }
 }
