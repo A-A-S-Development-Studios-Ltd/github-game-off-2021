@@ -17,6 +17,7 @@ public class Level1 : MonoBehaviour
     public List<Bug> levelBugList;
     public int waveCount;
     public int killCount;
+    public int bugCount;
     public Text waveLabel;
     private GameEngine gameEngine;
 
@@ -32,14 +33,19 @@ public class Level1 : MonoBehaviour
         BugEvents.onDeath += this.bugDead;
         bugList = new List<Bug> { ant, bee, beetle, goldLadyBug, fireAnt, ladyBug, stinkBug, ant, bee, beetle, fireAnt, ladyBug, stinkBug, ladyBug, ant, beetle, ladyBug, ant, beetle };
         gameEngine = GameObject.FindWithTag("GameEngine").GetComponent<GameEngine>();
-        waveCount = 0;
+        waveCount = 20;
         killCount = 0;
+        bugCount = 0;
         BugEvents.onDeath += OnSquish;
         GenerateWave();
     }
     public void OnSquish(Bug bug)
     {
         killCount++;
+    }
+    private void Update()
+    {
+        bugCount = levelBugList.Count;
     }
     void GenerateWave()
     {
@@ -101,7 +107,7 @@ public class Level1 : MonoBehaviour
             for (var i = 10; i < maxCount; i++)
             {
                 Bug bug = bugList[Random.Range(0, bugCount)];
-                int count = Random.Range(1, 1);
+                int count = Random.Range(1, 2);
                 bugs2.Add((bug, count));
             }
         }
