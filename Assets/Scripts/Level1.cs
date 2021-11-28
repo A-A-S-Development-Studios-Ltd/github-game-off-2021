@@ -99,9 +99,13 @@ public class Level1 : MonoBehaviour
                 bugs.Add((bug, count));
             }
         }
-
+        StartCoroutine(spawnBugs(bugs));
+    }
+    IEnumerator spawnBugs(List<(Bug, int)> bugs)
+    {
         foreach ((Bug, int) item in bugs)
         {
+            yield return new WaitForSeconds(2f);
             levelBugList.AddRange(BugGenerator.generate(bug: item.Item1, count: item.Item2));
         }
     }
