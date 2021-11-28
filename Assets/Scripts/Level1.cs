@@ -89,6 +89,12 @@ public class Level1 : MonoBehaviour
         {
             bugs.Add((stinkBug, Random.Range(3, max)));
         }
+        foreach ((Bug, int) item in bugs)
+        {
+            levelBugList.AddRange(BugGenerator.generate(bug: item.Item1, count: item.Item2));
+        }
+
+        var bugs2 = new List<(Bug, int)>();
         if (waveCount > 10)
         {
             int maxCount = (waveCount > 20) ? waveCount : 20;
@@ -96,10 +102,10 @@ public class Level1 : MonoBehaviour
             {
                 Bug bug = bugList[Random.Range(0, bugCount)];
                 int count = Random.Range(1, 1);
-                bugs.Add((bug, count));
+                bugs2.Add((bug, count));
             }
         }
-        StartCoroutine(spawnBugs(bugs));
+        StartCoroutine(spawnBugs(bugs2));
     }
     IEnumerator spawnBugs(List<(Bug, int)> bugs)
     {
