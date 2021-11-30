@@ -43,5 +43,8 @@ sysinfo.txt
 # Android output
 android/output/*
 
+# iOS output
+iOS/output/*
+
 # OS X
 */.DS_Store
