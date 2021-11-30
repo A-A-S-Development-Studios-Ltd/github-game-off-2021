@@ -39,3 +39,6 @@ sysinfo.txt
 # Logs
 *.log
 [Ll]ogs/*
+
+# Android output
+android/output/*
