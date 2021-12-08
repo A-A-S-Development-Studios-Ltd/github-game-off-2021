@@ -27,6 +27,8 @@ TagManager:
   - GameEngine
   - WaveCount
   - Pause
+  - Fire
+  - Gas
   layers:
   - Default
   - TransparentFX

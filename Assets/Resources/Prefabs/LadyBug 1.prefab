@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3004559419835093879}
   - component: {fileID: 3004559419835093864}
   - component: {fileID: 3004559419835093865}
-  - component: {fileID: 3004559419835093878}
   - component: {fileID: -1790776102455601780}
+  - component: {fileID: 3004559419835093878}
   - component: {fileID: -3999232061920852424}
+  - component: {fileID: -6295300679604089607}
   m_Layer: 0
   m_Name: LadyBug 1
   m_TagString: LadyBug
@@ -108,6 +109,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &-1790776102455601780
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3004559419835093876}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!61 &3004559419835093878
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -118,7 +140,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.17}
@@ -134,27 +156,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.62, y: 3.43}
   m_EdgeRadius: 0.25
---- !u!50 &-1790776102455601780
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3004559419835093876}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &-3999232061920852424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +172,17 @@ MonoBehaviour:
   moveSpeed: 5
   autoDestroy: 0
   deathAnimation: {fileID: 9026545040381968841, guid: 2f56b361dda533647a01186448488f1e, type: 3}
+  fireDeathAnimation: {fileID: 2203130224392483021, guid: 0b65f2a03ea0d834d8d4e0da87f3b428, type: 3}
+  gasDeathAnimation: {fileID: 7079544601203937919, guid: 47f362fad4aad4e41903bdc936a08e70, type: 3}
+--- !u!114 &-6295300679604089607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3004559419835093876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdc0024529735b4db3a966497f5d669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

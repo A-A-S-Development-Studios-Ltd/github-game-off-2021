@@ -3,10 +3,12 @@ using UnityEngine;
 public class StinkBug : Bug
 {
     public GameObject deathAnimation;
-    public GameObject specialDeathAnimation;
+    public GameObject specialDeathAnimation;    
+    public GameObject fireDeathAnimation;
+    public GameObject gasDeathAnimation;
     public GameObject powerUp;
 
-    private int dropRate = 25;
+    private int dropRate = 25;    
 
     public override float baseSpeed
     {
@@ -25,8 +27,38 @@ public class StinkBug : Bug
         {
             Instantiate(specialDeathAnimation, this.transform.position, Quaternion.identity);
             Instantiate(powerUp, this.transform.position, Quaternion.identity);
-        } else  {
+        } else  
+        {
             Instantiate(deathAnimation, this.transform.position, Quaternion.identity);
         }
+    }
+    
+    public override void PlayFireDeathAnimation()
+    {
+        int randomValue = Random.Range(0,100);
+
+        if (randomValue <= dropRate) 
+        {
+            Instantiate(specialDeathAnimation, this.transform.position, Quaternion.identity);
+            Instantiate(powerUp, this.transform.position, Quaternion.identity);
+        } else  
+        {
+            Instantiate(fireDeathAnimation, this.transform.position, Quaternion.identity);
+        }
+    }
+
+    public override void PlayGasDeathAnimation()
+    {
+        int randomValue = Random.Range(0,100);
+
+        if (randomValue <= dropRate) 
+        {
+            Instantiate(specialDeathAnimation, this.transform.position, Quaternion.identity);
+            Instantiate(powerUp, this.transform.position, Quaternion.identity);
+        } else  
+        {
+            Instantiate(gasDeathAnimation, this.transform.position, Quaternion.identity);
+        }
+        
     }
 }

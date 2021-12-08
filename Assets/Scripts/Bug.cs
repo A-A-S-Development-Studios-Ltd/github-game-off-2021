@@ -60,6 +60,14 @@ public class Bug : MonoBehaviour
     {
         //code is in subclass
     }
+    public virtual void PlayFireDeathAnimation()
+    {
+        //code is in subclass
+    }
+    public virtual void PlayGasDeathAnimation()
+    {
+        //code is in subclass
+    }
     private void OnMouseDown()
     {
         if(!gameEngine.IsExhausted() && gameEngine.IsPlaying()) {
@@ -97,5 +105,18 @@ public class Bug : MonoBehaviour
             return;
         }
         rb.MovePosition(rb.position + currentPosition * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) 
+    {
+        if(collision.gameObject.tag == "Fire") {
+            this.PlayFireDeathAnimation();
+            Destroy(this.gameObject);
+        }
+
+        if(collision.gameObject.tag == "Gas") {
+            this.PlayGasDeathAnimation();
+            Destroy(this.gameObject);
+        }
     }
 }

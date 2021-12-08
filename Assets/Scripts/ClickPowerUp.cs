@@ -5,7 +5,9 @@ using UnityEngine;
 public class ClickPowerUp : MonoBehaviour
 {
     Vector2 targetPosition;
-    private GameEngine gameEngine;
+    private GameEngine gameEngine;   
+    public GameObject fireAnimation;
+    public GameObject gasAnimation;
     string tagType;
 
     Hashtable powerUpSlots = new Hashtable() {
@@ -35,7 +37,22 @@ public class ClickPowerUp : MonoBehaviour
     private void OnMouseDown()
     {
         gameEngine.staminaBar.UseStamina(-8);
-        TimerEvents.TimerUpdate(10);
+
+        if(this.gameObject.tag == "PowerTimer") 
+        {
+            TimerEvents.TimerUpdate(10);
+        }
+
+        if(this.gameObject.tag == "PowerMagnify") 
+        {
+            Instantiate(fireAnimation, this.transform.position, Quaternion.identity);
+        }
+
+        if(this.gameObject.tag == "PowerSprayCan") 
+        {
+            Instantiate(gasAnimation, this.transform.position, Quaternion.identity);
+        }
+        
         Destroy(gameObject);
     }
 }
