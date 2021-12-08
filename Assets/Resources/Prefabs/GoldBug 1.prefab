@@ -175,6 +175,7 @@ MonoBehaviour:
   specialDeathAnimation: {fileID: 5324196249880785302, guid: c01389032cab7844580dced392788c55, type: 3}
   fireDeathAnimation: {fileID: 2203130224392483021, guid: 0b65f2a03ea0d834d8d4e0da87f3b428, type: 3}
   gasDeathAnimation: {fileID: 7079544601203937919, guid: 47f362fad4aad4e41903bdc936a08e70, type: 3}
+  pointIncrease: {fileID: 5442824263983045748, guid: 75d0c21be1975c840a0f31f669f20bcf, type: 3}
   powerUp: {fileID: 676416568051432823, guid: b6303763e92f5db4facb8504b5c5b9e8, type: 3}
 --- !u!114 &5786230820235905765
 MonoBehaviour:

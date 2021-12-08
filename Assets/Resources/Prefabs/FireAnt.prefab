@@ -174,4 +174,5 @@ MonoBehaviour:
   specialDeathAnimation: {fileID: 5324196249880785302, guid: c01389032cab7844580dced392788c55, type: 3}
   fireDeathAnimation: {fileID: 2203130224392483021, guid: 0b65f2a03ea0d834d8d4e0da87f3b428, type: 3}
   gasDeathAnimation: {fileID: 7079544601203937919, guid: 47f362fad4aad4e41903bdc936a08e70, type: 3}
+  pointIncrease: {fileID: 4457044007818997287, guid: b503f30fd2a1db546a515fec407a11b0, type: 3}
   powerUp: {fileID: 5107294895199055347, guid: efbe6f9c9c464ea499aa0497a24c1160, type: 3}

@@ -8,6 +8,7 @@ public class ClickPowerUp : MonoBehaviour
     private GameEngine gameEngine;   
     public GameObject fireAnimation;
     public GameObject gasAnimation;
+    public GameObject timeIncrease;
     string tagType;
 
     Hashtable powerUpSlots = new Hashtable() {
@@ -41,6 +42,7 @@ public class ClickPowerUp : MonoBehaviour
         if(this.gameObject.tag == "PowerTimer") 
         {
             TimerEvents.TimerUpdate(10);
+            Instantiate(timeIncrease, this.transform.position, Quaternion.identity);
         }
 
         if(this.gameObject.tag == "PowerMagnify") 

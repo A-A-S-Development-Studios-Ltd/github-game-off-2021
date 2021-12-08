@@ -6,6 +6,7 @@ public class Bee : Bug
     public GameObject specialDeathAnimation;
     public GameObject fireDeathAnimation;
     public GameObject gasDeathAnimation;
+    public GameObject pointIncrease;
     public GameObject powerUp;
 
     private int dropRate = 25;
@@ -27,8 +28,12 @@ public class Bee : Bug
         {
             Instantiate(specialDeathAnimation, this.transform.position, Quaternion.identity);
             Instantiate(powerUp, this.transform.position, Quaternion.identity);
-        } else  {
+            Instantiate(pointIncrease, this.transform.position, Quaternion.identity);
+        } 
+        else  
+        {
             Instantiate(deathAnimation, this.transform.position, Quaternion.identity);
+            Instantiate(pointIncrease, this.transform.position, Quaternion.identity);
         }
     }
     
@@ -40,9 +45,12 @@ public class Bee : Bug
         {
             Instantiate(specialDeathAnimation, this.transform.position, Quaternion.identity);
             Instantiate(powerUp, this.transform.position, Quaternion.identity);
-        } else  
+            Instantiate(pointIncrease, this.transform.position, Quaternion.identity);
+        } 
+        else  
         {
             Instantiate(fireDeathAnimation, this.transform.position, Quaternion.identity);
+            Instantiate(pointIncrease, this.transform.position, Quaternion.identity);
         }
     }
 
@@ -54,9 +62,12 @@ public class Bee : Bug
         {
             Instantiate(specialDeathAnimation, this.transform.position, Quaternion.identity);
             Instantiate(powerUp, this.transform.position, Quaternion.identity);
-        } else  
+            Instantiate(pointIncrease, this.transform.position, Quaternion.identity);
+        } 
+        else  
         {
             Instantiate(gasDeathAnimation, this.transform.position, Quaternion.identity);
+            Instantiate(pointIncrease, this.transform.position, Quaternion.identity);
         }
         
     }
