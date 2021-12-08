@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -1790776102455601780}
   - component: {fileID: 3004559419835093878}
   - component: {fileID: -3999232061920852424}
-  - component: {fileID: -6295300679604089607}
   m_Layer: 0
   m_Name: LadyBug 1
   m_TagString: LadyBug
@@ -174,15 +173,3 @@ MonoBehaviour:
   deathAnimation: {fileID: 9026545040381968841, guid: 2f56b361dda533647a01186448488f1e, type: 3}
   fireDeathAnimation: {fileID: 2203130224392483021, guid: 0b65f2a03ea0d834d8d4e0da87f3b428, type: 3}
   gasDeathAnimation: {fileID: 7079544601203937919, guid: 47f362fad4aad4e41903bdc936a08e70, type: 3}
---- !u!114 &-6295300679604089607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3004559419835093876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cdc0024529735b4db3a966497f5d669, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

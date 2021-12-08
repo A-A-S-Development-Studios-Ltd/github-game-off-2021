@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4507198823571893075}
   - component: {fileID: 4507198823571893072}
   - component: {fileID: 1226757987}
-  - component: {fileID: 7778983570940610249}
+  - component: {fileID: 2530729664463410936}
   m_Layer: 0
   m_Name: Gas
   m_TagString: Gas
@@ -155,7 +155,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7778983570940610249
+--- !u!114 &2530729664463410936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4507198823571893073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec84f096f5808147b5c820134c58397, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e54e9185b5b7d447a60036efe8e256a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 7
