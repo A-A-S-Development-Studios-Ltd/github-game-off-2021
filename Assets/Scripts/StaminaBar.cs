@@ -19,6 +19,8 @@ public class StaminaBar : MonoBehaviour
     private IEnumerator coroutine;
 
     public GameObject uiBar;
+    public GameObject exhaustedBanner;
+    Vector2 targetPosition;
 
     private void Awake()
     {
@@ -28,6 +30,7 @@ public class StaminaBar : MonoBehaviour
 
     void Start()
     {
+        targetPosition = new Vector2(0,0);
         currentStamina = 0;
         slider.maxValue = maxStamina;
         slider.value = 0;
@@ -58,6 +61,8 @@ public class StaminaBar : MonoBehaviour
         {
             currentStamina = maxStamina;
             gameEngine.SetExaustion(true);
+
+            Instantiate(exhaustedBanner, targetPosition, Quaternion.identity);
 
             SliderFill.GetComponent<Image>().color = Color.red;
         }

@@ -1469,6 +1469,10 @@ PrefabInstance:
       propertyPath: shakeDuration
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5861207211536837160, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
+      propertyPath: exhaustedBanner
+      value: 
+      objectReference: {fileID: 4507324495205353140, guid: 594618b766327a7488addcc94dd1130c, type: 3}
     - target: {fileID: 5861207211693670677, guid: 9be3a5c81f4285845a6f0c714ed76e8f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
