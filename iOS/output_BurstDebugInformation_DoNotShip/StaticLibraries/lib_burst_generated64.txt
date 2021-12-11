@@ -1,11 +1,12 @@
 Library: lib_burst_generated64
 --platform=iOS
---backend=burst-llvm-11
+--backend=burst-llvm-10
 --target=ARMV8A_AARCH64
 --global-safety-checks-setting=Off
 --dump=Function
 --float-precision=Standard
 --format=MachO
+--disable-warnings=BC1370
 --compilation-defines=UNITY_2021_2_3
 --compilation-defines=UNITY_2021_2
 --compilation-defines=UNITY_2021
@@ -125,6 +126,7 @@ Library: lib_burst_generated64
 --compilation-defines=ENABLE_ANIMATION_BURST
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --compilation-defines=ENABLE_SPRITESHAPE_BURST
+--generate-link-xml=Temp/burst.link.xml
 --generate-static-linkage-methods
 --output=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/StaticLibraries/lib_burst_generated64
 --root-assembly=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/Data/Managed/UnityEngine.UI.dll
@@ -136,9 +138,9 @@ Library: lib_burst_generated64
 --root-assembly=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/Data/Managed/Unity.2D.Animation.Runtime.dll
 --root-assembly=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/Data/Managed/Unity.TextMeshPro.dll
 --root-assembly=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/Data/Managed/Unity.Timeline.dll
+--root-assembly=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll
 --root-assembly=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/Data/Managed/Unity.2D.SpriteShape.Runtime.dll
 --root-assembly=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/Data/Managed/Unity.2D.PixelPerfect.dll
---root-assembly=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll
 --root-assembly=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/Data/Managed/Unity.2D.Common.Runtime.dll
 --root-assembly=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/Data/Managed/Unity.2D.IK.Runtime.dll
 --root-assembly=/Users/sebastienfockchowtho/Developer/workspaces/github-game-off-2021/Temp/StagingArea/Data/Managed/Unity.2D.Tilemap.Extras.dll
