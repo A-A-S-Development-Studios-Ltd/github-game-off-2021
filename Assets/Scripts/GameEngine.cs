@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 enum GameState
 {
@@ -23,6 +24,7 @@ public class GameEngine : MonoBehaviour
     public StaminaBar staminaBar;
     public PopupManager popup;
     public Text waveLabel;
+    public GameObject oof;
     private int score = 0;
     private int missStaminaCost = 10;
 
@@ -52,6 +54,9 @@ public class GameEngine : MonoBehaviour
         switch (gameState)
         {
             case GameState.PLAY:
+                if(!audioSource.isPlaying) {
+                    audioSource.Play();
+                }
                 PlayLoop();
                 break;
             case GameState.LOOSE:
@@ -65,6 +70,8 @@ public class GameEngine : MonoBehaviour
                 break;
             case GameState.PAUSE:
                 // TODO: - Display pause overlay
+                audioSource.loop = false;
+                audioSource.Pause();
                 timer.ToggleTimer();
                 break;
             case GameState.FINISHED:
@@ -127,6 +134,7 @@ public class GameEngine : MonoBehaviour
         {
             if (isExhausted)
             {
+                Instantiate(oof, new Vector2(0,0), Quaternion.identity);
                 staminaBar.UseStamina(0);
                 return;
             }
