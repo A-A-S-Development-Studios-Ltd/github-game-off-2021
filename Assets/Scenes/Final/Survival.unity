@@ -1724,6 +1724,7 @@ MonoBehaviour:
   staminaBar: {fileID: 606311372}
   popup: {fileID: 5244697}
   waveLabel: {fileID: 1017843843}
+  oof: {fileID: 786066734346690227, guid: 5ffcb28f6d783d14b9f19b61e46d2b5d, type: 3}
   timer: {fileID: 907916316}
 --- !u!4 &1960745705
 Transform:
