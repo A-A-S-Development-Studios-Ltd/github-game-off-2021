@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GoogleMobileAds.Api;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
 
     public float transitionTime = 1f;
+
+    private void Start()
+    {
+        MobileAds.Initialize(initStatus => { });
+    }
 
     public void LoadHomeScreen()
     {
