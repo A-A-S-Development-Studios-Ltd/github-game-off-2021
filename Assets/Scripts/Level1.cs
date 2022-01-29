@@ -49,11 +49,6 @@ public class Level1 : MonoBehaviour
 
     void Start()
     {
-        RequestInterstitial();
-        if (this.interstitial.IsLoaded())
-        {
-            this.interstitial.Show();
-        }
 
         ladyBug = Resources.Load<LadyBug>("Prefabs/LadyBug 1");
         bee = Resources.Load<Bee>("Prefabs/Bee 1");

@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using GoogleMobileAds.Api;
+
 
 enum GameState
 {
@@ -10,6 +12,8 @@ enum GameState
     LOOSE,
     FINISHED
 }
+
+
 
 public class GameEngine : MonoBehaviour
 {
@@ -34,6 +38,25 @@ public class GameEngine : MonoBehaviour
     private GameState gameState = GameState.PLAY;
 
     private AudioSource audioSource;
+    private InterstitialAd interstitial;
+
+    private void RequestInterstitial()
+    {
+#if UNITY_ANDROID
+        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+#elif UNITY_IPHONE
+        string adUnitId = "ca-app-pub-3940256099942544/4411468910";
+#else
+        string adUnitId = "unexpected_platform";
+#endif
+
+        // Initialize an InterstitialAd.
+        this.interstitial = new InterstitialAd(adUnitId);
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().Build();
+        // Load the interstitial with the request.
+        this.interstitial.LoadAd(request);
+    }
 
     private void Start()
     {
@@ -54,7 +77,8 @@ public class GameEngine : MonoBehaviour
         switch (gameState)
         {
             case GameState.PLAY:
-                if(!audioSource.isPlaying) {
+                if (!audioSource.isPlaying)
+                {
                     audioSource.Play();
                 }
                 PlayLoop();
@@ -82,6 +106,11 @@ public class GameEngine : MonoBehaviour
 
     private void PrepareEndModal()
     {
+        // RequestInterstitial();
+        // if (this.interstitial.IsLoaded())
+        // {
+        //     this.interstitial.Show();
+        // }
         if (score >= 150)
         {
             badge1.sprite = Resources.Load<Sprite>("Sprites/star-gold");
@@ -134,7 +163,7 @@ public class GameEngine : MonoBehaviour
         {
             if (isExhausted)
             {
-                Instantiate(oof, new Vector2(0,0), Quaternion.identity);
+                Instantiate(oof, new Vector2(0, 0), Quaternion.identity);
                 staminaBar.UseStamina(0);
                 return;
             }
